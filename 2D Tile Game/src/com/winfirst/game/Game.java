@@ -27,6 +27,7 @@ public class Game implements Runnable{
 	
 	//States
 	private State gameState;
+	@SuppressWarnings("unused")
 	private State menuState;
 	
 	//Input
