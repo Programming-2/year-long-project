@@ -7,7 +7,3 @@ Please keep in mind that this game is still in developement and is not meant to 
 Project Head: Jakob Misbach
 
 Lead Developer: Jakob Misbach
-
-Developer: Tre
-
-Plot Design: Tre
