@@ -33,6 +33,15 @@ public class Utils {
 		}
 	}
 	
+	public static float parseFloat(String number){
+		try{
+			return Float.parseFloat(number);
+		}catch(NumberFormatException e){
+			e.printStackTrace();
+			return 0;
+		}
+	}
+	
 	public String[] splitStringAtSpace(String s){
 		String[] split = s.split(" ");
 		return split;
