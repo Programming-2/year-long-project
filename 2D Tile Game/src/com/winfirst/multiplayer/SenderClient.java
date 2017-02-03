@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import com.winfirst.entity.Entity;
 
-public class SenderClient extends Client implements Runnable{
+public class SenderClient extends Client{
 	private boolean running;
 	private Thread thread;
 	private PrintWriter pw;
