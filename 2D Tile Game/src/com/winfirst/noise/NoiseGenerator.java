@@ -1,12 +1,13 @@
 package com.winfirst.noise;
 
-import java.util.ArrayList;
-
 public class NoiseGenerator {
 	private float scale;
+	private int min, max;
 	
-	public NoiseGenerator(float scale){
+	public NoiseGenerator(float scale, int min, int max){
 		this.scale = scale;
+		this.min = min;
+		this.max = max;
 	}
 	
 	public float generateNoise(){
