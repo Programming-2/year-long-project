@@ -10,7 +10,7 @@ public class NoiseGenerator {
 		this.max = max;
 	}
 	
-	public float generateNoise(){
-		return 0.0f;
+	public int generateNoise(){
+		return 0;
 	}
 }
