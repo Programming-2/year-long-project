@@ -2,11 +2,10 @@ package com.winfirst.noise;
 
 public class NoiseGenerator {
 	private float scale;
-	private int min, max;
+	private int max;
 	
-	public NoiseGenerator(float scale, int min, int max){
+	public NoiseGenerator(float scale, int max){
 		this.scale = scale;
-		this.min = min;
 		this.max = max;
 	}
 	
