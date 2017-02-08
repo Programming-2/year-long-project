@@ -5,7 +5,6 @@ import java.awt.image.BufferedImage;
 
 import com.winfirst.graphics.Animation;
 import com.winfirst.tile.Assets;
-import com.winfirst.tile.Tile;
 import com.winfirst.utils.Handler;
 
 public class Player extends Creature{
