@@ -3,6 +3,7 @@ package com.winfirst.utils;
 import com.winfirst.game.Game;
 import com.winfirst.graphics.GameCamera;
 import com.winfirst.input.KeyManager;
+import com.winfirst.input.MouseManager;
 import com.winfirst.world.World;
 
 public class Handler {
@@ -44,5 +45,9 @@ public class Handler {
 
 	public void setWorld(World world) {
 		this.world = world;
+	}
+	
+	public MouseManager getMouseManager(){
+		return game.getMouseManager();
 	}
 }
