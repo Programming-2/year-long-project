@@ -3,29 +3,27 @@ package com.winfirst.inventory;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.winfirst.tile.Tile;
-
 public class Inventory {
 	
-	private Map<Tile, Integer> inventory;
+	private Map<InventoryItem, Integer> inventory;
 	
 	public Inventory(){
 		inventory = new HashMap<>();
 	}
 	
-	public void addTile(Tile tile){
-		inventory.put(tile, 0);
+	public void addTile(InventoryItem item){
+		inventory.put(item, 0);
 	}
 	
-	public void addItem(Tile tile){
-		inventory.put(tile, inventory.get(tile) + 1);
+	public void addItem(InventoryItem item){
+		inventory.put(item, inventory.get(item) + 1);
 	}
 	
-	public void setAmt(Tile tile, int value){
-		inventory.put(tile, value);
+	public void setAmt(InventoryItem item, int value){
+		inventory.put(item, value);
 	}
 	
-	public int getAmt(Tile tile){
-		return inventory.get(tile);
+	public int getAmt(InventoryItem item){
+		return inventory.get(item);
 	}
 }
