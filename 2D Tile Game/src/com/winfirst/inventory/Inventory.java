@@ -12,4 +12,20 @@ public class Inventory {
 	public Inventory(){
 		inventory = new HashMap<>();
 	}
+	
+	public void addTile(Tile tile){
+		inventory.put(tile, 0);
+	}
+	
+	public void addItem(Tile tile){
+		inventory.put(tile, inventory.get(tile) + 1);
+	}
+	
+	public void setAmt(Tile tile, int value){
+		inventory.put(tile, value);
+	}
+	
+	public int getAmt(Tile tile){
+		return inventory.get(tile);
+	}
 }
