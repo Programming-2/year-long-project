@@ -10,6 +10,6 @@ public class NoiseGenerator {
 	}
 	
 	public int generateNoise(){
-		return 0;
+		return ((int) (Math.random() * max));
 	}
 }
