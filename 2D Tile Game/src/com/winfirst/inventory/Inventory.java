@@ -11,7 +11,7 @@ public class Inventory {
 		inventory = new HashMap<>();
 	}
 	
-	public void addInventoryItem(InventoryItem item){
+	public void addTile(InventoryItem item){
 		inventory.put(item, 0);
 	}
 	
