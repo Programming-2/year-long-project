@@ -1,4 +1,4 @@
-package com.winfirst.physics;
+package com.winfirst.projectile;
 
 public class Vector2D {
 
