@@ -11,6 +11,10 @@ public abstract class Weapon extends Item{
 		this.dmg = dmg;
 	}
 	
+	public void setDmg(int dmg){
+		this.dmg = dmg
+	}
+	
 	public int getDmg(){
 		return dmg;
 	}

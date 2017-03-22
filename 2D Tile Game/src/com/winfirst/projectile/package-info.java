@@ -5,4 +5,4 @@
  * @author Jakob Misbach
  *
  */
-package com.winfirst.physics;
+package com.winfirst.projectile;
