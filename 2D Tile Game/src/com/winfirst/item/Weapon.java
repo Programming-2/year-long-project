@@ -12,7 +12,7 @@ public abstract class Weapon extends Item{
 	}
 	
 	public void setDmg(int dmg){
-		this.dmg = dmg
+		this.dmg = dmg;
 	}
 	
 	public int getDmg(){
