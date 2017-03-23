@@ -53,7 +53,9 @@ public class SenderClient extends Client {
     }
 
     public synchronized void stop() {
-        if (!running) return;
+        if (!running) {
+            return;
+        }
         running = false;
         try {
             thread.join();

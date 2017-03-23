@@ -148,14 +148,18 @@ public class Game implements Runnable {
     }
 
     public synchronized void start() {
-        if (running) return;
+        if (running) {
+            return;
+        }
         running = true;
         thread = new Thread(this);
         thread.start();
     }
 
     public synchronized void stop() {
-        if (!running) return;
+        if (!running) {
+            return;
+        }
         running = false;
         try {
             thread.join();

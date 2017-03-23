@@ -4,7 +4,7 @@ import com.winfirst.tile.Tile;
 
 public interface InventoryItem {
 
-    public int getNumItems(); //Needed?
+    int getNumItems(); //Needed?
 
-    public Tile getTile(); //Change to Item
+    Tile getTile(); //Change to Item
 }

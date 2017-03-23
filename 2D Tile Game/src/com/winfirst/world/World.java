@@ -26,7 +26,9 @@ public class World {
         entityManager = new EntityManager(handler, new Player(handler, 100, 100));
         entityManager.addEntity(new Tree(handler, 200, 200));
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0;
+             i < 5;
+             i++) {
             entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 64, ThreadLocalRandom.current().nextInt(1, 22) * 64));
         }
 
@@ -47,10 +49,13 @@ public class World {
         int yStart = (int) Math.max(0, handler.getGameCamera().getyOffset() / Tile.TILEHEIGHT);
         int yEnd = (int) Math.min(height, (handler.getGameCamera().getyOffset() + handler.getHeight()) / Tile.TILEHEIGHT + 1);
 
-        for (int y = yStart; y < yEnd; y++) {
-            for (int x = xStart; x < xEnd; x++) {
-                getTile(x, y).render(g, (int) (x * Tile.TILEWIDTH - handler.getGameCamera().getxOffset()),
-                        (int) (y * Tile.TILEHEIGHT - handler.getGameCamera().getyOffset()));
+        for (int y = yStart;
+             y < yEnd;
+             y++) {
+            for (int x = xStart;
+                 x < xEnd;
+                 x++) {
+                getTile(x, y).render(g, (int) (x * Tile.TILEWIDTH - handler.getGameCamera().getxOffset()), (int) (y * Tile.TILEHEIGHT - handler.getGameCamera().getyOffset()));
             }
         }
 
@@ -83,8 +88,12 @@ public class World {
 
         tiles = new int[width][height];
 
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
+        for (int y = 0;
+             y < height;
+             y++) {
+            for (int x = 0;
+                 x < width;
+                 x++) {
                 tiles[x][y] = Utils.parseInt(tokens[(x + y * width) + 4]);
             }
         }
