@@ -17,12 +17,9 @@ public class Launcher {
 	 * Finish Settings GUI and implement
 	 * 
 	 * Done:
-<<<<<<< HEAD
-=======
 	 * Complete Render Order
 	 * Fixed Tree Bounds
 	 * Added Settings GUI class
 	 * Added No Movement Animation
->>>>>>> branch 'master' of https://github.com/squirlemaster42/RPG-Gaame
 	 */
 }
