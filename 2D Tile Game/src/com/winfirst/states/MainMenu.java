@@ -1,24 +1,24 @@
 package com.winfirst.states;
 
-import java.awt.Graphics;
-
 import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
 
-public class MainMenu extends State{
+import java.awt.*;
 
-	public MainMenu(Handler handler){
-		super(handler);
-	}
-	
-	@Override
-	public void tick() {
-		System.out.println(handler.getMouseManager().getMouseX() + " " + handler.getMouseManager().getMouseY());
-	}
+public class MainMenu extends State {
 
-	@Override
-	public void render(Graphics g) {
-		g.drawImage(Assets.mainMenu, 0, 0, null);
-	}
+    public MainMenu(Handler handler) {
+        super(handler);
+    }
+
+    @Override
+    public void tick() {
+        System.out.println(handler.getMouseManager().getMouseX() + " " + handler.getMouseManager().getMouseY());
+    }
+
+    @Override
+    public void render(Graphics g) {
+        g.drawImage(Assets.mainMenu, 0, 0, null);
+    }
 
 }

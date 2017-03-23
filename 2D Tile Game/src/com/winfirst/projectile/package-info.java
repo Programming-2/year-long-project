@@ -1,5 +1,5 @@
 /**
- * 
+ * @author Jakob Misbach
  */
 /**
  * @author Jakob Misbach

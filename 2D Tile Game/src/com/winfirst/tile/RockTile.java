@@ -1,14 +1,14 @@
 package com.winfirst.tile;
 
-public class RockTile extends Tile{
+public class RockTile extends Tile {
 
-	public RockTile(int id) {
-		super(Assets.rock, id);
-	}
-	
-	@Override
-	public boolean isSolid(){
-		return true;
-	}
+    public RockTile(int id) {
+        super(Assets.rock, id);
+    }
+
+    @Override
+    public boolean isSolid() {
+        return true;
+    }
 
 }
