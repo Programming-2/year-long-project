@@ -15,8 +15,8 @@
       <sourceFolder url="file://$MODULE_DIR$/tst" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="jdk" jdkName="1.8 (1)" jdkType="JavaSDK" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library">
       <library name="res">
         <CLASSES>
           <root url="file://$MODULE_DIR$/res" />
@@ -25,7 +25,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library name="junit4">
         <CLASSES>
           <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/" />
