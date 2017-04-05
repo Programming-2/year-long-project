@@ -20,7 +20,7 @@ public class EntityGroupController<T extends Entity> {
         return group.get(i);
     }
 
-    public void moveGroup(int x, int y){
+    public void moveGroup(float x, float y){
         for(Entity e : group){
             e.setX(x);
             e.setY(y);
