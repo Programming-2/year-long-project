@@ -47,7 +47,7 @@ public class NPC extends Creature {
 
             if (this.getY() > p.getY()) {
                 yMove = 4 * -1;
-            } else if (this.getX() < p.getX()) {
+            } else if (this.getY() < p.getY()) {
                 yMove = 4;
             } else {
                 yMove = 0;
