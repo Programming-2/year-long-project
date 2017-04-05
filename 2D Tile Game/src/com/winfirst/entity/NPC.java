@@ -36,41 +36,49 @@ public class NPC extends Creature {
         float xMove = 0;
         float yMove = 0;
 
-        if(isMoving()) {
-            if (this.getX() > p.getX()) {
-                xMove = 4 * -1;
-            } else if (this.getX() < p.getX()) {
-                xMove = 4;
-            } else {
-                xMove = 0;
-            }
+        if (this.getX() > p.getX()) {
+            xMove = 4 * -1;
+        } else if (this.getX() < p.getX()) {
+            xMove = 4;
+        } else {
+            xMove = 0;
+        }
 
-            if (this.getY() > p.getY()) {
-                yMove = 4 * -1;
-            } else if (this.getY() < p.getY()) {
-                yMove = 4;
-            } else {
-                yMove = 0;
-            }
+        if (this.getY() > p.getY()) {
+            yMove = 4 * -1;
+        } else if (this.getY() < p.getY()) {
+            yMove = 4;
+        } else {
+            yMove = 0;
         }
 
         this.setxMove(xMove);
         this.setyMove(yMove);
     }
 
-    public boolean isMoving(){
-        updatePast();
-        if(this.pastX == p.getX() && this.pastY == p.getY()){
+    public boolean isMovingX(){
+        updatePastX();
+        if(this.pastX == p.getX()){
             return true;
         }
         return false;
     }
 
-    private void updatePast(){
+    public boolean isMovingY(){
+        updatePastY();
+        if(this.pastY == p.getY()){
+            return true;
+        }
+        return false;
+    }
+
+    private void updatePastX(){
         if(this.pastX != p.getX()){
             this.pastX = p.getX();
         }
+    }
 
+    private void updatePastY(){
         if(this.pastY != p.getY()){
             this.pastY = p.getY();
         }
