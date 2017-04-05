@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
-    <libelement value="file://C:\Users\Jakob Misbach\git\Game\2D Tile Game\res" />
+    <libelement value="file://C:\Users\jmisb19164\Downloads\Game-master (1)\Game-master\2D Tile Game\res" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
       <src_folder value="file://$MODULE_DIR$/tst" expected_position="1" />
