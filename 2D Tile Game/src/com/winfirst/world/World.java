@@ -1,14 +1,14 @@
 package com.winfirst.world;
 
 import com.winfirst.entity.EntityManager;
+import com.winfirst.entity.NPC;
 import com.winfirst.entity.Player;
-import com.winfirst.entity.Tree;
 import com.winfirst.tile.Tile;
 import com.winfirst.utils.Handler;
 import com.winfirst.utils.Utils;
 
 import java.awt.*;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 public class World {
 
@@ -16,6 +16,8 @@ public class World {
     private int width, height;
     private int spawnX, spawnY;
     private int[][] tiles;
+    private NPC npc;
+    private Player p;
 
     //Entities
     private EntityManager entityManager;
@@ -23,14 +25,18 @@ public class World {
     public World(Handler handler, String path) {
         this.handler = handler;
 
-        entityManager = new EntityManager(handler, new Player(handler, 100, 100));
-        entityManager.addEntity(new Tree(handler, 200, 200));
+        p = new Player(handler, 100, 100);
+        entityManager = new EntityManager(handler, p);
+        //entityManager.addEntity(new Tree(handler, 200, 200));
+        npc = new NPC(handler, 300, 300, p);
+        entityManager.addEntity(npc);
+        npc.setTrack(true);
 
-        for (int i = 0;
-             i < 5;
-             i++) {
-            entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 64, ThreadLocalRandom.current().nextInt(1, 22) * 64));
-        }
+//        for (int i = 0;
+//             i < 5;
+//             i++) {
+//            entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 64, ThreadLocalRandom.current().nextInt(1, 22) * 64));
+//        }
 
 
         loadWorld(path);
@@ -97,6 +103,13 @@ public class World {
                 tiles[x][y] = Utils.parseInt(tokens[(x + y * width) + 4]);
             }
         }
+
+//        Random rand = new Random();
+//        for (int i = 0; i < tiles.length; i++) {
+//            for (int j = 0; j < tiles[0].length; j++) {
+//                tiles[i][j] = rand.nextInt(4);
+//            }
+//        }
     }
 
     //Getters and Setters
