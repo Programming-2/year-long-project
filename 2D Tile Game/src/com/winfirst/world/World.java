@@ -105,17 +105,17 @@ public class World {
             }
         }
 
-        for (int i = 0; i < tiles.length; i++) {
-            System.out.println();
-            for (int j = 0; j < tiles[0].length; j++) {
-                if(i == 0 || j == 0){
-                    tiles[i][j] = 2;
-                }else {
-                    System.out.print((int) ((((Math.abs(SimplexNoise.noise(i, j)))) * 4)) + " ");
-                    tiles[i][j] = (int) ((((Math.abs(SimplexNoise.noise(i, j)))) * 4));
-                }
-            }
-        }
+//        for (int i = 0; i < tiles.length; i++) {
+//            System.out.println();
+//            for (int j = 0; j < tiles[0].length; j++) {
+//                if(i == 0 || j == 0 || j == tiles[0].length - 1 || i == tiles.length - 1){
+//                    tiles[i][j] = 2;
+//                }else {
+//                    System.out.print((int) ((((Math.abs(SimplexNoise.noise(i, j)))) * 4)) + " ");
+//                    tiles[i][j] = (int) ((((Math.abs(SimplexNoise.noise(i, j)))) * 4));
+//                }
+//            }
+//        }
     }
 
     //Getters and Setters
