@@ -3,6 +3,7 @@ package com.winfirst.world;
 import com.winfirst.entity.EntityManager;
 import com.winfirst.entity.NPC;
 import com.winfirst.entity.Player;
+import com.winfirst.noise.SimplexNoise;
 import com.winfirst.tile.Tile;
 import com.winfirst.utils.Handler;
 import com.winfirst.utils.Utils;
@@ -104,12 +105,17 @@ public class World {
             }
         }
 
-//        Random rand = new Random();
-//        for (int i = 0; i < tiles.length; i++) {
-//            for (int j = 0; j < tiles[0].length; j++) {
-//                tiles[i][j] = rand.nextInt(4);
-//            }
-//        }
+        for (int i = 0; i < tiles.length; i++) {
+            System.out.println();
+            for (int j = 0; j < tiles[0].length; j++) {
+                if(i == 0 || j == 0){
+                    tiles[i][j] = 2;
+                }else {
+                    System.out.print((int) ((((Math.abs(SimplexNoise.noise(i, j)))) * 4)) + " ");
+                    tiles[i][j] = (int) ((((Math.abs(SimplexNoise.noise(i, j)))) * 4));
+                }
+            }
+        }
     }
 
     //Getters and Setters
