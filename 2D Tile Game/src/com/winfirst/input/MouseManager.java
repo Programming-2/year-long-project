@@ -9,6 +9,7 @@ public class MouseManager implements MouseListener, MouseMotionListener {
     private boolean leftPressed, rightPressed;
     private int mouseX, mouseY;
 
+    //Change to singleton
     public MouseManager() {
 
     }
@@ -41,7 +42,7 @@ public class MouseManager implements MouseListener, MouseMotionListener {
     }
 
     @Override
-    public void mouseClicked(MouseEvent areg0) {
+    public void mouseClicked(MouseEvent e) {
 
     }
 

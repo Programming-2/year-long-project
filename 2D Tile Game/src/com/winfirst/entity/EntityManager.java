@@ -22,6 +22,7 @@ public class EntityManager {
 
     };
 
+    //Make singleton
     public EntityManager(Handler handler, Player player) {
         this.handler = handler;
         this.player = player;

@@ -8,6 +8,7 @@ public class KeyManager implements KeyListener {
     public boolean up, down, left, right;
     private boolean[] keys;
 
+    //Change to singleton
     public KeyManager() {
         keys = new boolean[256];
     }
