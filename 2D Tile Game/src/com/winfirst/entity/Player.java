@@ -12,6 +12,7 @@ public class Player extends Creature {
     //Animations
     private Animation animDown, animLeft, animRight, animUp, animStop;
 
+    //Need to give player an inventory
     public Player(Handler handler, float x, float y) {
         super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 
