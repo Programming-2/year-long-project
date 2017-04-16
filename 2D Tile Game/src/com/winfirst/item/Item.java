@@ -9,11 +9,14 @@ import java.util.ArrayList;
 public abstract class Item implements InventoryItem {
 
     private boolean stackable;
-    protected BufferedImage texture;
+    protected BufferedImage[] texture;
+    private float x, y;
 
-    public Item(BufferedImage texture){
+    public Item(float x, float y, BufferedImage[] texture){
         stackable = false;
         this.texture = texture;
+        this.x = x;
+        this.y = y;
     }
 
     @Override
@@ -37,4 +40,20 @@ public abstract class Item implements InventoryItem {
     public abstract void tick();
 
     public abstract void render(Graphics g);
+
+    public float getX(){
+        return this.x;
+    }
+
+    public void setX(float x){
+        this.x = x;
+    }
+
+    public float getY(){
+        return this.y;
+    }
+
+    public void setY(float y){
+        this.y = y;
+    }
 }
