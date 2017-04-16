@@ -1,29 +1,20 @@
 package com.winfirst.inventory;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
 public class Inventory {
 
-    private Map<InventoryItem, Integer> inventory;
+    private ArrayList<Item> inventory;
 
     public Inventory() {
-        inventory = new HashMap<>();
+        inventory = new ArrayList<>();
     }
 
-    public void addTile(InventoryItem item) {
-        inventory.put(item, 0);
+    public void addItem(Item item){
+        inventory.add(item);
     }
 
-    public void addItem(InventoryItem item) {
-        inventory.put(item, inventory.get(item) + 1);
-    }
-
-    public void setAmt(InventoryItem item, int value) {
-        inventory.put(item, value);
-    }
-
-    public int getAmt(InventoryItem item) {
-        return inventory.get(item);
+    public InventoryItem getItem(int index){
+        return inventory.get(index);
     }
 }
