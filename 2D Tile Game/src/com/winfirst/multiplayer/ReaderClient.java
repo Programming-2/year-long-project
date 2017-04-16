@@ -14,7 +14,7 @@ public class ReaderClient extends Client {
     private BufferedReader br;
     private ArrayList<Position> posArr;
 
-    public ReaderClient(int port, String ip) {
+    public ReaderClient(final int port, final String ip) {
         super(port, ip);
         this.running = false;
         posArr = new ArrayList<>();

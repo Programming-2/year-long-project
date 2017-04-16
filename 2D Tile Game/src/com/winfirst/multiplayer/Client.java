@@ -9,7 +9,7 @@ public abstract class Client implements Runnable {
     private int port;
     private String ip;
 
-    public Client(int port, String ip) {
+    public Client(final int port, final String ip) {
         this.port = port;
         this.ip = ip;
         try {

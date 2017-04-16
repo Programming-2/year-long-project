@@ -12,7 +12,7 @@ public class SenderClient extends Client {
     private PrintWriter pw;
     private ArrayList<Entity> entArr;
 
-    public SenderClient(int port, String ip) {
+    public SenderClient(final int port, final String ip) {
         super(port, ip);
         this.running = false;
         entArr = new ArrayList<>();
