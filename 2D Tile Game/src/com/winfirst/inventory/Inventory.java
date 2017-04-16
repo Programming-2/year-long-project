@@ -1,5 +1,7 @@
 package com.winfirst.inventory;
 
+import com.winfirst.item.Item;
+
 import java.util.ArrayList;
 
 public class Inventory {
