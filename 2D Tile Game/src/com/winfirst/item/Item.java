@@ -8,15 +8,12 @@ import java.util.ArrayList;
 
 public abstract class Item implements InventoryItem {
 
-    public static ArrayList<Item> itemList = new ArrayList<>();
-
     private boolean stackable;
     protected BufferedImage texture;
 
     public Item(BufferedImage texture){
         stackable = false;
         this.texture = texture;
-        itemList.add(this);
     }
 
     @Override
