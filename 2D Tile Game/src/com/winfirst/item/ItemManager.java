@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class ItemManager {
 
     //Start singleton  utils
-    public static ItemManager instatance;
+    private static ItemManager instatance;
 
     public static ItemManager getInstatance(){
         if(instatance == null){
