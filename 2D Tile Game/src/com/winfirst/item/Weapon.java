@@ -6,8 +6,8 @@ public abstract class Weapon extends Item {
 
     private int dmg;
 
-    public Weapon(BufferedImage icon, int dmg) {
-        super(icon);
+    public Weapon(BufferedImage[] icon, int dmg) {
+        super(0 , 0, icon);
         this.dmg = dmg;
     }
 

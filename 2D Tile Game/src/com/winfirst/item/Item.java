@@ -4,7 +4,6 @@ import com.winfirst.inventory.InventoryItem;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
 public abstract class Item implements InventoryItem {
 

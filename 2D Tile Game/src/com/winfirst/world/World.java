@@ -3,6 +3,7 @@ package com.winfirst.world;
 import com.winfirst.entity.EntityManager;
 import com.winfirst.entity.NPC;
 import com.winfirst.entity.Player;
+import com.winfirst.entity.Tree;
 import com.winfirst.noise.SimplexNoise;
 import com.winfirst.tile.Tile;
 import com.winfirst.utils.Handler;
@@ -10,6 +11,7 @@ import com.winfirst.utils.Utils;
 
 import java.awt.*;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class World {
 
@@ -33,9 +35,7 @@ public class World {
         entityManager.addEntity(npc);
         npc.setTrack(true);
 
-//        for (int i = 0;
-//             i < 5;
-//             i++) {
+//        for (int i = 0; i < 5; i++) {
 //            entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 64, ThreadLocalRandom.current().nextInt(1, 22) * 64));
 //        }
 
