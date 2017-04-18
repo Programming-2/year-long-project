@@ -9,7 +9,7 @@ public class Launcher {
         //		SettingsGUI settings = new SettingsGUI(300, 300);
         //		settings.makeSettingsGui();
 
-        Logger.setPath("/log/log.txt");
+        Logger.setPath("res/log/");
         Logger.getInstance().write("Path set");
 
         Game game = new Game("RPG Game", 1280, 720);

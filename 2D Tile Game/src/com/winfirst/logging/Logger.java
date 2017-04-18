@@ -4,6 +4,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Logger {
 
@@ -22,10 +25,15 @@ public class Logger {
     private BufferedWriter bw;
     private File file;
     private FileWriter fw;
+    private static final DateFormat sdf = new SimpleDateFormat("yyyy-MM-ddHH:mm:ss");
 
     private Logger(){
         try {
-            file = new File(path);
+            Date date  = new Date();
+
+            file = new File(path +  sdf.format(date) + ".txt");
+
+            System.out.println(file);
 
             if(!file.exists()) {
                    file.createNewFile();
@@ -33,7 +41,7 @@ public class Logger {
 
             fw = new FileWriter(file);
             bw = new BufferedWriter(fw);
-            bw.write("Writer Initialized");
+            write("Writer Initialized");
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Logger has crashed");
@@ -43,7 +51,7 @@ public class Logger {
 
     public void write(String msg){
         try {
-            bw.write(msg);
+            bw.write(msg + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -54,7 +62,7 @@ public class Logger {
             if(bw == null){
                 System.out.println("Its Null");
             }
-            bw.write("Closing");
+            write("Closing");
             bw.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -73,5 +81,4 @@ public class Logger {
             path = inpPath;
         }
     }
-
 }
