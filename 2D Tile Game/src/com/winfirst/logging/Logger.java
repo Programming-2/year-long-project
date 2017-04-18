@@ -33,8 +33,6 @@ public class Logger {
 
             file = new File(path +  sdf.format(date) + ".txt");
 
-            System.out.println(file);
-
             if(!file.exists()) {
                    file.createNewFile();
             }
