@@ -1,7 +1,13 @@
 package com.winfirst.graphics;
 
-import javax.swing.*;
-import java.awt.*;
+import com.winfirst.logging.Logger;
+
+import javax.swing.JFrame;
+import java.awt.Canvas;
+import java.awt.Dimension;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 public class Display {
 
@@ -10,12 +16,20 @@ public class Display {
 
     private String title;
     private int width, height;
+    private WindowListener exitListener;
 
     public Display(String title, int width, int height) {
         this.title = title;
         this.width = width;
         this.height = height;
 
+        exitListener = new WindowAdapter(){
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                Logger.getInstance().close();
+            }
+        };
         createDisplay();
     }
 
@@ -34,6 +48,7 @@ public class Display {
         canvas.setFocusable(false);
 
         frame.add(canvas);
+        frame.addWindowListener(exitListener);
         frame.pack();
     }
 

@@ -24,21 +24,19 @@ public class Logger {
     private FileWriter fw;
 
     private Logger(){
-        if(!file.exists()){
-            try {
-                file = new File(path);
+        try {
+            file = new File(path);
 
-                if(!file.exists()) {
-                    file.createNewFile();
-                }
-
-                fw = new FileWriter(file);
-                bw = new BufferedWriter(fw);
-                bw.write("Writer Initialized");
-            } catch (IOException e) {
-                e.printStackTrace();
-                System.out.println("Logger has crashed");
+            if(!file.exists()) {
+                   file.createNewFile();
             }
+
+            fw = new FileWriter(file);
+            bw = new BufferedWriter(fw);
+            bw.write("Writer Initialized");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Logger has crashed");
         }
 
     }
@@ -51,13 +49,27 @@ public class Logger {
         }
     }
 
+    public void close(){
+        try {
+            if(bw == null){
+                System.out.println("Its Null");
+            }
+            bw.write("Closing");
+            bw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Logger Closed");
+    }
+
     public static String getPath(){
         return path;
     }
 
     //Should only be set once
-    public static void setPath(String inpPath){
-        if(path == null){
+    public static void setPath(String inpPath) {
+        if (path == null) {
             path = inpPath;
         }
     }
