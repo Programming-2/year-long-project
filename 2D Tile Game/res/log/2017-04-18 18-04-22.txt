@@ -1,0 +1,3 @@
+Writer Initialized
+Path set
+Closing

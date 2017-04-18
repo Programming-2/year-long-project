@@ -25,7 +25,7 @@ public class Logger {
     private BufferedWriter bw;
     private File file;
     private FileWriter fw;
-    private static final DateFormat sdf = new SimpleDateFormat("yyyy-MM-ddHH:mm:ss");
+    private static final DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 
     private Logger(){
         try {
