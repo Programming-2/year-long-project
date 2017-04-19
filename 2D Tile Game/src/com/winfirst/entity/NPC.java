@@ -1,5 +1,6 @@
 package com.winfirst.entity;
 
+import com.winfirst.logging.Logger;
 import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
 
@@ -44,7 +45,7 @@ public class NPC extends Creature {
             xMove = 0;
         }
 
-        if (this.getY() > p.getY()) {
+        if (this.getY() >= p.getY()) {
             yMove = 4 * -1;
         } else if (this.getY() < p.getY()) {
             yMove = 4;
@@ -52,36 +53,11 @@ public class NPC extends Creature {
             yMove = 0;
         }
 
+        Logger.getInstance().write("" + yMove);
+        Logger.getInstance().write("" + xMove);
+
         this.setxMove(xMove);
         this.setyMove(yMove);
-    }
-
-    public boolean isMovingX(){
-        updatePastX();
-        if(this.pastX == p.getX()){
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isMovingY(){
-        updatePastY();
-        if(this.pastY == p.getY()){
-            return true;
-        }
-        return false;
-    }
-
-    private void updatePastX(){
-        if(this.pastX != p.getX()){
-            this.pastX = p.getX();
-        }
-    }
-
-    private void updatePastY(){
-        if(this.pastY != p.getY()){
-            this.pastY = p.getY();
-        }
     }
 
     public void setTrack(boolean b) {

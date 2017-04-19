@@ -104,6 +104,8 @@ public class Game implements Runnable {
         long timer = 0;
         int ticks = 0;
 
+        Logger.getInstance().write("Run started");
+
         while (running) {
             now = System.nanoTime();
             delta += (now - lastTime) / timePerTick;
@@ -119,6 +121,7 @@ public class Game implements Runnable {
 
             if (timer >= 1000000000) {
                 System.out.println(ticks);
+                Logger.getInstance().write("" + ticks);
                 ticks = 0;
                 timer = 0;
             }
