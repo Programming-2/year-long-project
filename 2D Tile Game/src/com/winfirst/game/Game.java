@@ -4,6 +4,7 @@ import com.winfirst.graphics.Display;
 import com.winfirst.graphics.GameCamera;
 import com.winfirst.input.KeyManager;
 import com.winfirst.input.MouseManager;
+import com.winfirst.logging.Logger;
 import com.winfirst.states.GameState;
 import com.winfirst.states.MainMenu;
 import com.winfirst.states.State;
@@ -148,6 +149,7 @@ public class Game implements Runnable {
     }
 
     public synchronized void start() {
+        Logger.getInstance().write("Game Started");
         if (running) {
             return;
         }
@@ -157,6 +159,7 @@ public class Game implements Runnable {
     }
 
     public synchronized void stop() {
+        Logger.getInstance().write("Game Stopped");
         if (!running) {
             return;
         }
