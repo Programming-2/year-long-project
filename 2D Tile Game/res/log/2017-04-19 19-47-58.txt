@@ -1,3 +1,6 @@
 Writer Initialized
 Path set
+Game Started
+Run started
+60
 Closing

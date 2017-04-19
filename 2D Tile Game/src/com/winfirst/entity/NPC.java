@@ -1,6 +1,5 @@
 package com.winfirst.entity;
 
-import com.winfirst.logging.Logger;
 import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
 
@@ -52,9 +51,6 @@ public class NPC extends Creature {
         } else {
             yMove = 0;
         }
-
-        Logger.getInstance().write("" + yMove);
-        Logger.getInstance().write("" + xMove);
 
         this.setxMove(xMove);
         this.setyMove(yMove);
