@@ -4,16 +4,20 @@ import com.winfirst.logging.Logger;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ConfigFile {
 
     private String file;
 
     private ArrayList<String> fileAsList;
+    private Map<String, Object> value;
 
     public ConfigFile(String file){
         this.file = file;
         this.fileAsList = new ArrayList<>();
+        this.value = new HashMap<>();
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File(file)));
@@ -25,5 +29,15 @@ public class ConfigFile {
             e.printStackTrace();
             Logger.getInstance().write("Configs have crashed");
         }
+
+        fillMap();
+    }
+
+    private void fillMap(){
+        fileAsList.forEach(a -> getValue(a));
+    }
+
+    private void getValue(String a){
+        
     }
 }
