@@ -31,7 +31,7 @@ public class Logger {
         try {
             Date date  = new Date();
 
-            file = new File(path +  sdf.format(date) + ".txt");
+            file = new File(path +  sdf.format(date) + ".log");
 
             if(!file.exists()) {
                    file.createNewFile();

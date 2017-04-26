@@ -1,5 +1,6 @@
 package com.winfirst.main;
 
+import com.winfirst.config.ConfigFile;
 import com.winfirst.game.Game;
 import com.winfirst.logging.Logger;
 
@@ -11,9 +12,10 @@ public class Launcher {
 
         Logger.setPath("res/log/");
         Logger.getInstance().write("Path set");
+        ConfigFile cfgconfigfilefile = new ConfigFile("res/config/config.cfg");
 
         Game game = new Game("RPG Game", 1280, 720);
-        game.start();
+        //game.start();
     }
 
 	/* 

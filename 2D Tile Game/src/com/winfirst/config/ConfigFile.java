@@ -25,7 +25,15 @@ public class ConfigFile {
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File(file)));
-            fileAsList.add(br.readLine());
+            String line = br.readLine();
+            while(line != null) {
+                if(line.substring(0, 2).equals("//")) {
+                    line = br.readLine();
+                    continue;
+                }
+                fileAsList.add(line);
+                line = br.readLine();
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             Logger.getInstance().write("Configs have crashed");
@@ -34,7 +42,9 @@ public class ConfigFile {
             Logger.getInstance().write("Configs have crashed");
         }
 
+
         fillMap();
+        values.forEach((k, v) -> System.out.println(v));
     }
 
     private void fillMap(){
@@ -43,11 +53,15 @@ public class ConfigFile {
 
     private void getValue(String a){
         String name = a.substring(0, a.indexOf(':'));
-        String value = a.substring(a.indexOf(':'));
+        String value = a.substring(a.indexOf(':') + 2);
 
         name.trim();
         value.trim();
 
         values.put(name, value);
+    }
+
+    public Map<String, Object> getValues(){
+        return values;
     }
 }
