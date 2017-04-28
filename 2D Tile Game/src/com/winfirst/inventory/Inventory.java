@@ -18,8 +18,9 @@ public class Inventory {
 
     public void addItem(Item item){
         findEmptySpace();
-        if(nextEmptyPos != -1)
+        if(nextEmptyPos != -1) {
             inventory[nextEmptyPos] = item;
+        }
     }
 
     public void addItem(Item item, int index){
