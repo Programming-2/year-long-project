@@ -15,7 +15,7 @@ public class Launcher {
         ConfigFile cfgconfigfilefile = new ConfigFile("res/config/config.cfg");
 
         Game game = new Game("RPG Game", 1280, 720);
-        //game.start();
+        game.start();
     }
 
 	/* 
