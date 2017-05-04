@@ -18,14 +18,4 @@ public class Launcher {
         game.start();
     }
 
-	/* 
-     * To do:
-	 * Finish Settings GUI and implement
-	 * 
-	 * Done:
-	 * Complete Render Order
-	 * Fixed Tree Bounds
-	 * Added Settings GUI class
-	 * Added No Movement Animation
-	 */
 }
