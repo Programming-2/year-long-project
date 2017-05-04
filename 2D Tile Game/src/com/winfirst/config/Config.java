@@ -13,7 +13,7 @@ public class Config <T>{
     }
 
     private void readConfig(){
-
+        T object = (T) ConfigFile.getValue(name);
     }
 
 }

@@ -16,7 +16,7 @@ public class ConfigFile {
     private String file;
 
     private ArrayList<String> fileAsList;
-    private Map<String, Object> values;
+    private static Map<String, Object> values; //Will be changed to not be static
 
     public ConfigFile(String file){
         this.file = file;
@@ -48,10 +48,10 @@ public class ConfigFile {
     }
 
     private void fillMap(){
-        fileAsList.forEach(a -> getValue(a));
+        fileAsList.forEach(a -> splitConfig(a));
     }
 
-    private void getValue(String a){
+    private void splitConfig(String a){
         String name = a.substring(0, a.indexOf(':'));
         String value = a.substring(a.indexOf(':') + 2);
 
@@ -59,6 +59,10 @@ public class ConfigFile {
         value.trim();
 
         values.put(name, value);
+    }
+
+    public static Object getValue(String name){
+        return values.get(name);
     }
 
     public Map<String, Object> getValues(){
