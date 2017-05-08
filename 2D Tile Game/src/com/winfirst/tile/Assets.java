@@ -15,11 +15,13 @@ public class Assets {
     public static BufferedImage[] playerLeft;
     public static BufferedImage[] playerRight;
     public static BufferedImage[] playerStop;
+    public static BufferedImage iron;
 
     public static void init() {
         SpriteSheet ground = new SpriteSheet(ImageLoader.loadImage("/textures/ground.png"));
         SpriteSheet MainMenu = new SpriteSheet(ImageLoader.loadImage("/textures/MainMenu.png"));
         SpriteSheet character = new SpriteSheet(ImageLoader.loadImage("/textures/Char.png"));
+        SpriteSheet item = new SpriteSheet(ImageLoader.loadImage("/textures/items.png"));
 
         playerDown = new BufferedImage[4];
         playerDown[0] = character.crop(0, 0, playerWidth, playerHeight);
@@ -54,6 +56,8 @@ public class Assets {
         rock = ground.crop(width * 2, 0, width, height);
         stoneBrick = ground.crop(width * 3, 0, width, height);
         tree = ground.crop(0, height, width, height);
+
+        iron = item.crop(0,0,width * 2, height);
     }
 
 }
