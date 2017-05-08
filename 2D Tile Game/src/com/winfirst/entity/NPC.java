@@ -1,12 +1,16 @@
 package com.winfirst.entity;
 
+import com.winfirst.graphics.Animation;
 import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class NPC extends Creature {
 
+    //Animations
+    private Animation animDown, animLeft, animRight, animUp, animStop;
     private Player p;
     private boolean track = false;
     private float pastX;
@@ -17,6 +21,12 @@ public class NPC extends Creature {
         this.p = p;
         this.pastX = p.getX();
         this.pastY = p.getY();
+
+        animDown = new Animation(500, Assets.playerDown);
+        animLeft = new Animation(500, Assets.playerLeft);
+        animRight = new Animation(500, Assets.playerRight);
+        animUp = new Animation(500, Assets.playerUp);
+        animStop = new Animation(500, Assets.playerStop);
     }
 
     @Override
@@ -25,16 +35,24 @@ public class NPC extends Creature {
             moveToPlayer();
         }
         this.move();
+
+        //Animations
+        animDown.tick();
+        animLeft.tick();
+        animRight.tick();
+        animUp.tick();
+        animStop.tick();
     }
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Assets.playerStop[0], (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
+        g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
     }
 
     private void moveToPlayer() {
         float xMove = 0;
         float yMove = 0;
+        System.out.println(this.getY() - p.getY());
 
         if (this.getX() > p.getX()) {
             xMove = 4 * -1;
@@ -44,7 +62,7 @@ public class NPC extends Creature {
             xMove = 0;
         }
 
-        if (this.getY() >= p.getY()) {
+        if (this.getY() > p.getY()) {
             yMove = 4 * -1;
         } else if (this.getY() < p.getY()) {
             yMove = 4;
@@ -54,6 +72,20 @@ public class NPC extends Creature {
 
         this.setxMove(xMove);
         this.setyMove(yMove);
+    }
+
+    private BufferedImage getCurrentAnimationFrame() {
+        if (xMove < 0) {
+            return animLeft.getCurrentFrame();
+        } else if (xMove > 0) {
+            return animRight.getCurrentFrame();
+        } else if (yMove < 0) {
+            return animUp.getCurrentFrame();
+        } else if (yMove > 0) {
+            return animDown.getCurrentFrame();
+        } else {
+            return animStop.getCurrentFrame();
+        }
     }
 
     public void setTrack(boolean b) {
