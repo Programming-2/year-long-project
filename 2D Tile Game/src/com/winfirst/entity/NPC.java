@@ -48,6 +48,7 @@ public class NPC extends Creature {
     @Override
     public void render(Graphics g) {
         g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
+        g.drawString(this.getX() + " " + this.getY(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()));
     }
 
 //    private void moveToPlayer() {
@@ -76,7 +77,24 @@ public class NPC extends Creature {
 //    }
 
     private void moveToPlayer() {
+        if(this.getY() - p.getY() < -36 - FOLLOW_BUFFER) {
+            yMove = 4;
+        } else if(this.getY() - p.getY() > 102 + FOLLOW_BUFFER) {
+            yMove = -4;
+        } else {
+            yMove = 0;
+        }
 
+        if(this.getX() - p.getX() < -30 - FOLLOW_BUFFER) {
+            xMove = 4;
+        } else if(this.getX() - p.getX() > 30 + FOLLOW_BUFFER) {
+            xMove = -4;
+        } else {
+            xMove = 0;
+        }
+
+        this.setxMove(xMove);
+        this.setyMove(yMove);
     }
 
     private BufferedImage getCurrentAnimationFrame() {
