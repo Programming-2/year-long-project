@@ -11,7 +11,7 @@ public class Bullet extends Projectile{
         super(startX, startY, image, vect);
         this.dmg = dmg;
     }
-        
+
     @Override
     public void tick() {
         super.setX((float) (super.getX() + super.getVector().getX()));
