@@ -15,7 +15,7 @@ public class NPC extends Creature {
     private boolean track = false;
     private float pastX;
     private float pastY;
-    private final int FOLLOW_BUFFER = 20;
+    private final int FOLLOW_BUFFER = 50;
 
     public NPC(Handler handler, float x, float y, Player p) {
         super(handler, x, y, Player.DEFAULT_CREATURE_WIDTH, Player.DEFAULT_CREATURE_HEIGHT);
