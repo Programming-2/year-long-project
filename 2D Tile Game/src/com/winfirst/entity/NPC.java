@@ -15,6 +15,7 @@ public class NPC extends Creature {
     private boolean track = false;
     private float pastX;
     private float pastY;
+    private final int FOLLOW_BUFFER = 20;
 
     public NPC(Handler handler, float x, float y, Player p) {
         super(handler, x, y, Player.DEFAULT_CREATURE_WIDTH, Player.DEFAULT_CREATURE_HEIGHT);
@@ -49,29 +50,33 @@ public class NPC extends Creature {
         g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
     }
 
+//    private void moveToPlayer() {
+//        float xMove = 0;
+//        float yMove = 0;
+//        System.out.println(this.getY() - p.getY());
+//
+//        if (this.getX() > p.getX()) {
+//            xMove = 4 * -1;
+//        } else if (this.getX() < p.getX()) {
+//            xMove = 4;
+//        } else {
+//            xMove = 0;
+//        }
+//
+//        if (this.getY() > p.getY()) {
+//            yMove = 4 * -1;
+//        } else if (this.getY() < p.getY()) {
+//            yMove = 4;
+//        } else {
+//            yMove = 0;
+//        }
+//
+//        this.setxMove(xMove);
+//        this.setyMove(yMove);
+//    }
+
     private void moveToPlayer() {
-        float xMove = 0;
-        float yMove = 0;
-        System.out.println(this.getY() - p.getY());
 
-        if (this.getX() > p.getX()) {
-            xMove = 4 * -1;
-        } else if (this.getX() < p.getX()) {
-            xMove = 4;
-        } else {
-            xMove = 0;
-        }
-
-        if (this.getY() > p.getY()) {
-            yMove = 4 * -1;
-        } else if (this.getY() < p.getY()) {
-            yMove = 4;
-        } else {
-            yMove = 0;
-        }
-
-        this.setxMove(xMove);
-        this.setyMove(yMove);
     }
 
     private BufferedImage getCurrentAnimationFrame() {
