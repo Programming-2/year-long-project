@@ -67,6 +67,7 @@ public class Player extends Creature {
         if (handler.getKeyManager().space){
             System.out.println(handler.getMouseManager().getMouseX() / SCALE_FACTOR);
             System.out.println(handler.getMouseManager().getMouseY() / SCALE_FACTOR);
+            //Only breaks when moving right. All other directs appear to work.
             handler.getEntityManager().addEntity(new Bullet(handler, (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), Assets.bullet, new Vector2D(handler.getMouseManager().getMouseX() / SCALE_FACTOR, handler.getMouseManager().getMouseY() / SCALE_FACTOR, 4), 4));
         }
     }

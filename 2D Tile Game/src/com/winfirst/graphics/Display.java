@@ -1,6 +1,7 @@
 package com.winfirst.graphics;
 
 import com.winfirst.logging.Logger;
+import com.winfirst.tile.Assets;
 
 import javax.swing.*;
 import java.awt.Canvas;
@@ -40,6 +41,7 @@ public class Display {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        frame.setIconImage(Assets.bullet);
 
         canvas = new Canvas();
         canvas.setPreferredSize(new Dimension(width, height));
