@@ -1,19 +1,20 @@
 package com.winfirst.projectile;
 
+import com.winfirst.entity.Entity;
+import com.winfirst.utils.Handler;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public abstract class Projectile {
+public abstract class Projectile extends Entity{
 
     private Vector2D vector;
     private BufferedImage image;
-    private float x, y;
 
-    public Projectile(float startX, float startY, BufferedImage image, Vector2D vector) {
+    public Projectile(Handler h, float startX, float startY, BufferedImage image, Vector2D vector) {
+        super(h, startX, startY, 32, 32);
         this.vector = vector;
         this.image = image;
-        this.x = startX;
-        this.y = startY;
     }
 
     public Vector2D getVector() {
@@ -26,21 +27,5 @@ public abstract class Projectile {
 
     public BufferedImage getImage(){
         return image;
-    }
-
-    public float getX(){
-        return x;
-    }
-
-    public float getY(){
-        return y;
-    }
-
-    public void setX(float x){
-        this.x = x;
-    }
-
-    public void setY(float y){
-        this.y = y;
     }
 }

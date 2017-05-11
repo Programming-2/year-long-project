@@ -1,6 +1,8 @@
 package com.winfirst.entity;
 
 import com.winfirst.graphics.Animation;
+import com.winfirst.projectile.Bullet;
+import com.winfirst.projectile.Vector2D;
 import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
 
@@ -11,6 +13,7 @@ public class Player extends Creature {
 
     //Animations
     private Animation animDown, animLeft, animRight, animUp, animStop;
+    private final int SCALE_FACTOR = 100;
 
     //Need to give player an inventory
     public Player(Handler handler, float x, float y) {
@@ -60,6 +63,12 @@ public class Player extends Creature {
         if (handler.getKeyManager().right) {
             xMove = +speed;
         }
+
+        if (handler.getKeyManager().space){
+            System.out.println(handler.getMouseManager().getMouseX() / SCALE_FACTOR);
+            System.out.println(handler.getMouseManager().getMouseY() / SCALE_FACTOR);
+            handler.getEntityManager().addEntity(new Bullet(handler, (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), Assets.bullet, new Vector2D(handler.getMouseManager().getMouseX() / SCALE_FACTOR, handler.getMouseManager().getMouseY() / SCALE_FACTOR, 4), 4));
+        }
     }
 
     @Override
@@ -73,6 +82,7 @@ public class Player extends Creature {
 //        				bounds.width, bounds.height);
     }
 
+    //Look at error
     private BufferedImage getCurrentAnimationFrame() {
         if (xMove < 0) {
             return animLeft.getCurrentFrame();

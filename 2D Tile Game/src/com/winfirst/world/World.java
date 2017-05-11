@@ -5,6 +5,7 @@ import com.winfirst.entity.NPC;
 import com.winfirst.entity.Player;
 import com.winfirst.entity.Tree;
 import com.winfirst.noise.SimplexNoise;
+import com.winfirst.projectile.Projectile;
 import com.winfirst.tile.Tile;
 import com.winfirst.utils.Handler;
 import com.winfirst.utils.Utils;
@@ -46,8 +47,13 @@ public class World {
         entityManager.getPlayer().setY(spawnY);
     }
 
+    public void addProjectile(Projectile p){
+        entityManager.addEntity(p);
+    }
+
     public void tick() {
         entityManager.tick();
+        //Add something to remove bullets no longer on the screen or map
     }
 
     public void render(Graphics g) {

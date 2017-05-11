@@ -1,5 +1,6 @@
 package com.winfirst.utils;
 
+import com.winfirst.entity.EntityManager;
 import com.winfirst.game.Game;
 import com.winfirst.graphics.GameCamera;
 import com.winfirst.input.KeyManager;
@@ -49,5 +50,9 @@ public class Handler {
 
     public MouseManager getMouseManager() {
         return game.getMouseManager();
+    }
+
+    public EntityManager getEntityManager(){
+        return world.getEntityManager();
     }
 }
