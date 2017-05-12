@@ -13,7 +13,7 @@ public class Player extends Creature {
 
     //Animations
     private Animation animDown, animLeft, animRight, animUp, animStop;
-    private final int SCALE_FACTOR = 100;
+    private final int SCALE_FACTOR = 1;
 
     //Need to give player an inventory
     public Player(Handler handler, float x, float y) {
@@ -67,8 +67,19 @@ public class Player extends Creature {
         if (handler.getKeyManager().space){
             System.out.println(handler.getMouseManager().getMouseX() / SCALE_FACTOR);
             System.out.println(handler.getMouseManager().getMouseY() / SCALE_FACTOR);
-            //Only breaks when moving right. All other directs appear to work.
-            handler.getEntityManager().addEntity(new Bullet(handler, (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), Assets.bullet, new Vector2D(handler.getMouseManager().getMouseX() / SCALE_FACTOR, handler.getMouseManager().getMouseY() / SCALE_FACTOR, 4), 4));
+            //Needs mouse math
+            int mouseX = handler.getMouseManager().getMouseX();
+            int mouseY = handler.getMouseManager().getMouseY();
+
+            if(mouseX < (int) (x - handler.getGameCamera().getxOffset())) {
+                mouseX *= -1;
+            }
+
+            if(mouseY < (int) (y - handler.getGameCamera().getyOffset())) {
+                mouseY *= -1;
+            }
+
+            handler.getEntityManager().addEntity(new Bullet(handler, (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), Assets.bullet, new Vector2D(mouseX / SCALE_FACTOR, mouseY / SCALE_FACTOR, 1), 4));
         }
     }
 
