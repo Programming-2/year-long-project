@@ -46,4 +46,8 @@ public class Utils {
         String[] split = s.split(" ");
         return split;
     }
+
+    public static long gcm(long a, long b) {
+        return b == 0 ? a : gcm(b, a % b);
+    }
 }

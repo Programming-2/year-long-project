@@ -5,6 +5,7 @@ import com.winfirst.projectile.Bullet;
 import com.winfirst.projectile.Vector2D;
 import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
+import com.winfirst.utils.Utils;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -68,18 +69,10 @@ public class Player extends Creature {
             System.out.println(handler.getMouseManager().getMouseX() / SCALE_FACTOR);
             System.out.println(handler.getMouseManager().getMouseY() / SCALE_FACTOR);
             //Needs mouse math
-            int mouseX = handler.getMouseManager().getMouseX();
-            int mouseY = handler.getMouseManager().getMouseY();
+            int mouseX = (handler.getMouseManager().getMouseX()) - (int) ((x - handler.getGameCamera().getxOffset()));
+            int mouseY = (handler.getMouseManager().getMouseY()) - (int) ((y - handler.getGameCamera().getyOffset()));
 
-            if(mouseX < (int) (x - handler.getGameCamera().getxOffset())) {
-                mouseX *= -1;
-            }
-
-            if(mouseY < (int) (y - handler.getGameCamera().getyOffset())) {
-                mouseY *= -1;
-            }
-
-            handler.getEntityManager().addEntity(new Bullet(handler, (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), Assets.bullet, new Vector2D(mouseX / SCALE_FACTOR, mouseY / SCALE_FACTOR, 1), 4));
+            handler.getEntityManager().addEntity(new Bullet(handler, (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), Assets.bullet, new Vector2D(mouseX, mouseY, 10), 4));
         }
     }
 

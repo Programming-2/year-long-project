@@ -16,8 +16,8 @@ public class Bullet extends Projectile{
 
     @Override
     public void tick() {
-        super.setX((float) (((super.getX() + super.getVector().getX())) / super.getVector().getSpeed()));
-        super.setY((float) (((super.getY() + super.getVector().getY())) / super.getVector().getSpeed()));
+        super.setX((float) (((super.getX() + super.getVector().getXVol()))));
+        super.setY((float) (((super.getY() + super.getVector().getYVol()))));
         //System.out.println("X: " + super.getX() + " " + "Y: " + super.getY());
     }
 
