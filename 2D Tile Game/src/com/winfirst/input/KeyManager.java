@@ -5,7 +5,7 @@ import java.awt.event.KeyListener;
 
 public class KeyManager implements KeyListener {
 
-    public boolean up, down, left, right, space;
+    public boolean up, down, left, right, space, e;
     private boolean[] keys;
 
     //Change to singleton
@@ -19,6 +19,7 @@ public class KeyManager implements KeyListener {
         right = keys[KeyEvent.VK_D];
         left = keys[KeyEvent.VK_A];
         space = keys[KeyEvent.VK_SPACE];
+        e = keys[KeyEvent.VK_E];
     }
 
     @Override

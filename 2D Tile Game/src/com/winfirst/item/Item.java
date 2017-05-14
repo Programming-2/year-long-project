@@ -8,10 +8,10 @@ import java.awt.image.BufferedImage;
 public abstract class Item implements InventoryItem {
 
     private boolean stackable;
-    protected BufferedImage[] texture;
+    protected BufferedImage texture;
     private float x, y;
 
-    public Item(float x, float y, BufferedImage[] texture){
+    public Item(float x, float y, BufferedImage texture){
         stackable = false;
         this.texture = texture;
         this.x = x;
@@ -54,5 +54,9 @@ public abstract class Item implements InventoryItem {
 
     public void setY(float y){
         this.y = y;
+    }
+
+    public BufferedImage getIcon(){
+        return texture;
     }
 }
