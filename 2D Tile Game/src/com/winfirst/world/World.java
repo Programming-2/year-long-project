@@ -77,11 +77,12 @@ public class World {
             }
         }
 
+        //Items
+        //Doesn't work
+        ItemManager.getInstatance().render(g);
+
         //Entities
         entityManager.render(g);
-
-        //Items
-        ItemManager.getInstatance().render(g);
     }
 
     public Tile getTile(int x, int y) {
