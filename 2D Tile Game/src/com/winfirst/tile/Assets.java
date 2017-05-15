@@ -17,6 +17,7 @@ public class Assets {
     public static BufferedImage[] playerStop;
     public static BufferedImage iron;
     public static BufferedImage bullet;
+    public static BufferedImage netCannon;
 
     public static void init() {
         SpriteSheet ground = new SpriteSheet(ImageLoader.loadImage("/textures/ground.png"));
@@ -60,6 +61,7 @@ public class Assets {
 
         iron = item.crop(0,0,width * 2, height);
         bullet = item.crop(width * 2, 0, width, height);
+        netCannon = item.crop(width * 3, 0, width, height);
     }
 
 }

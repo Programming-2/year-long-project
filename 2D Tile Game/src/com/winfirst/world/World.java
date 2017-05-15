@@ -4,8 +4,11 @@ import com.winfirst.entity.EntityManager;
 import com.winfirst.entity.NPC;
 import com.winfirst.entity.Player;
 import com.winfirst.entity.Tree;
+import com.winfirst.item.ItemManager;
+import com.winfirst.item.NetCannon;
 import com.winfirst.noise.SimplexNoise;
 import com.winfirst.projectile.Projectile;
+import com.winfirst.tile.Assets;
 import com.winfirst.tile.Tile;
 import com.winfirst.utils.Handler;
 import com.winfirst.utils.Utils;
@@ -40,6 +43,7 @@ public class World {
             entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 64, ThreadLocalRandom.current().nextInt(1, 22) * 64));
         }
 
+        ItemManager.getInstatance().addItem(new NetCannon(handler, Assets.netCannon, 15));
 
         loadWorld(path);
 
@@ -53,6 +57,7 @@ public class World {
 
     public void tick() {
         entityManager.tick();
+        ItemManager.getInstatance().tick();
         //Add something to remove bullets no longer on the screen or map
     }
 
@@ -74,6 +79,9 @@ public class World {
 
         //Entities
         entityManager.render(g);
+
+        //Items
+        ItemManager.getInstatance().render(g);
     }
 
     public Tile getTile(int x, int y) {

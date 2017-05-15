@@ -32,9 +32,11 @@ public class ItemManager {
 
     public void tick(){
         items.forEach(e -> e.tick());
+        //System.out.println("Item Tick");
     }
 
     public void render(Graphics g){
         items.forEach(e -> e.render(g));
+        //System.out.println("Item Render");
     }
 }
