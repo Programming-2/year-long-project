@@ -20,6 +20,6 @@ public class NetCannon extends Weapon{
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(super.getIcon(), (int) super.getHandler().getEntityManager().getPlayer().getX() + 10, (int) super.getHandler().getEntityManager().getPlayer().getY() + 10, 32, 32, null);
+        g.drawImage(super.getIcon(), (int) (super.getHandler().getEntityManager().getPlayer().getX() - super.getHandler().getGameCamera().getxOffset()) + 13, (int) (super.getHandler().getEntityManager().getPlayer().getY() - super.getHandler().getGameCamera().getyOffset()) + 30, 32, 32, null);
     }
 }
