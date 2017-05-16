@@ -11,8 +11,8 @@ public abstract class Projectile extends Entity{
     private Vector2D vector;
     private BufferedImage image;
 
-    public Projectile(Handler h, float startX, float startY, BufferedImage image, Vector2D vector) {
-        super(h, startX, startY, 32, 32);
+    public Projectile(Handler h, float startX, float startY, BufferedImage image, Vector2D vector, int width, int height) {
+        super(h, startX, startY, width, height);
         this.vector = vector;
         this.image = image;
     }
