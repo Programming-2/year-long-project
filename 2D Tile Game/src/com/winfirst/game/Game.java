@@ -11,7 +11,7 @@ import com.winfirst.states.State;
 import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
 
-import java.awt.*;
+import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 public class Game implements Runnable {
