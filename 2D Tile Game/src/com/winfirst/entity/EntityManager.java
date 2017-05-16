@@ -34,6 +34,7 @@ public class EntityManager {
             e.tick();
         }
         entities.sort(renderSorter);
+        System.out.println(entities.size());
     }
 
     public void render(Graphics g) {

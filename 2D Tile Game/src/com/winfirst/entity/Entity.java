@@ -74,4 +74,6 @@ public abstract class Entity {
         this.height = height;
     }
 
+    public Handler getHandler() { return handler; }
+
 }

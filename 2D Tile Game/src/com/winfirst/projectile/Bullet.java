@@ -21,6 +21,12 @@ public class Bullet extends Projectile{
         //System.out.println("X: " + super.getX() + " " + "Y: " + super.getY());
     }
 
+    public void onCollision() {
+        if(checkEntityCollision(super.getVector().getX(), super.getVector().getY())) {
+            super.getHandler().getEntityManager().removeEntity(this);
+        }
+    }
+
     @Override
     public void render(Graphics g) {
         g.drawImage(super.getImage(), (int) super.getX(), (int) super.getY(), null);
