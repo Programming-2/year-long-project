@@ -28,12 +28,14 @@ public class World {
 
     //Entities
     private EntityManager entityManager;
+    private ItemManager itemManager;
 
     public World(Handler handler, String path) {
         this.handler = handler;
 
         p = new Player(handler, 100, 100);
         entityManager = new EntityManager(handler, p);
+        itemManager = new ItemManager(handler);
         //entityManager.addEntity(new Tree(handler, 200, 200));
         npc = new NPC(handler, 300, 300, p);
         entityManager.addEntity(npc);
@@ -43,7 +45,7 @@ public class World {
             entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 64, ThreadLocalRandom.current().nextInt(1, 22) * 64));
         }
 
-        ItemManager.getInstatance().addItem(new NetCannon(handler, Assets.netCannon, 15));
+        itemManager.addItem(new NetCannon(handler, Assets.netCannon, 15));
 
         loadWorld(path);
 
@@ -57,7 +59,8 @@ public class World {
 
     public void tick() {
         entityManager.tick();
-        ItemManager.getInstatance().tick();
+        itemManager.tick();
+        //System.out.println(ItemManager.getInstatance());
         //Add something to remove bullets no longer on the screen or map
     }
 
@@ -79,7 +82,7 @@ public class World {
 
         //Items
         //Doesn't work
-        ItemManager.getInstatance().render(g);
+        itemManager.render(g);
 
         //Entities
         entityManager.render(g);
@@ -144,5 +147,9 @@ public class World {
 
     public EntityManager getEntityManager() {
         return entityManager;
+    }
+
+    public ItemManager getItemManager(){
+        return itemManager;
     }
 }

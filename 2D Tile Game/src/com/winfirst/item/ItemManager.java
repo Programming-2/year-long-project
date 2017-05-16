@@ -1,25 +1,18 @@
 package com.winfirst.item;
 
+import com.winfirst.utils.Handler;
+
 import java.awt.*;
 import java.util.ArrayList;
 
 public class ItemManager {
 
-    //Start singleton  utils
-    private static ItemManager instatance;
-
-    public static ItemManager getInstatance(){
-        if(instatance == null){
-            return new ItemManager();
-        }
-        return instatance;
-    }
-    //End singleton utils
-
     private ArrayList<Item> items;
+    private Handler handler;
 
-    private ItemManager(){
+    public ItemManager(Handler handler){
         items = new ArrayList<>();
+        this.handler = handler;
     }
 
     public void addItem(Item item){
@@ -32,11 +25,16 @@ public class ItemManager {
 
     public void tick(){
         items.forEach(e -> e.tick());
+        items.forEach(e -> System.out.println(e));
         //System.out.println("Item Tick");
     }
 
     public void render(Graphics g){
         items.forEach(e -> e.render(g));
         //System.out.println("Item Render");
+    }
+
+    public String toString(){
+        return new Integer(items.size()).toString();
     }
 }
