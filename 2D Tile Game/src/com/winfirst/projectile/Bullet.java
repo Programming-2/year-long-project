@@ -22,7 +22,7 @@ public class Bullet extends Projectile{
     }
 
     public void onCollision() {
-        if(checkEntityCollision(super.getVector().getX(), super.getVector().getY())) {
+        if(checkEntityCollision(super.getVector().getXVol(), super.getVector().getYVol())) {
             super.getHandler().getEntityManager().removeEntity(this);
         }
     }

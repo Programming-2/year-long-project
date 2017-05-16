@@ -51,31 +51,6 @@ public class NPC extends Creature {
         g.drawString(this.getX() + " " + this.getY(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()));
     }
 
-//    private void moveToPlayer() {
-//        float xMove = 0;
-//        float yMove = 0;
-//        System.out.println(this.getY() - p.getY());
-//
-//        if (this.getX() > p.getX()) {
-//            xMove = 4 * -1;
-//        } else if (this.getX() < p.getX()) {
-//            xMove = 4;
-//        } else {
-//            xMove = 0;
-//        }
-//
-//        if (this.getY() > p.getY()) {
-//            yMove = 4 * -1;
-//        } else if (this.getY() < p.getY()) {
-//            yMove = 4;
-//        } else {
-//            yMove = 0;
-//        }
-//
-//        this.setxMove(xMove);
-//        this.setyMove(yMove);
-//    }
-
     private void moveToPlayer() {
         if(this.getY() - p.getY() < -36 - FOLLOW_BUFFER) {
             yMove = 4;
