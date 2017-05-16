@@ -25,7 +25,6 @@ public class ItemManager {
 
     public void tick(){
         items.forEach(e -> e.tick());
-        items.forEach(e -> System.out.println(e));
         //System.out.println("Item Tick");
     }
 

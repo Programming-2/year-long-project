@@ -20,7 +20,6 @@ public class NetCannon extends Weapon{
 
     @Override
     public void render(Graphics g) {
-        System.out.println("NetCannon Rendered");
         g.drawImage(super.getIcon(), 100, 100, 32, 32, null);
     }
 }
