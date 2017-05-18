@@ -24,7 +24,6 @@ public class NetCannon extends Weapon{
             int mouseY = (super.getHandler().getMouseManager().getMouseY()) - (int) ((super.getY() - super.getHandler().getGameCamera().getyOffset()));
 
             super.getHandler().getEntityManager().addEntity(new Bullet(super.getHandler(), (int) (super.getX() - super.getHandler().getGameCamera().getxOffset()), (int) (super.getY() - super.getHandler().getGameCamera().getyOffset()), Assets.bullet, new Vector2D(mouseX, mouseY, 10), 4));
-            System.out.println(super.getX() + " " + super.getY());
         }
 
         super.setX((super.getHandler().getEntityManager().getPlayer().getX()) + 10);
