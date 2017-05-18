@@ -80,12 +80,11 @@ public class World {
             }
         }
 
-        //Items
-        //Doesn't work
-        itemManager.render(g);
-
         //Entities
         entityManager.render(g);
+
+        //Items
+        itemManager.render(g);
     }
 
     public Tile getTile(int x, int y) {

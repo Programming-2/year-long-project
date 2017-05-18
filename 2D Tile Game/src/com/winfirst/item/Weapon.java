@@ -9,8 +9,8 @@ public abstract class Weapon extends Item {
     private int dmg;
     private Handler handler;
 
-    public Weapon(Handler handler, BufferedImage icon, int dmg) {
-        super(0 , 0, icon);
+    public Weapon(Handler handler, BufferedImage icon, int x, int y, int dmg) {
+        super( x , y, icon);
         this.dmg = dmg;
         this.handler = handler;
     }

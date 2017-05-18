@@ -14,7 +14,6 @@ public class Player extends Creature {
 
     //Animations
     private Animation animDown, animLeft, animRight, animUp, animStop;
-    private final int SCALE_FACTOR = 1;
 
     //Need to give player an inventory
     public Player(Handler handler, float x, float y) {
@@ -63,16 +62,6 @@ public class Player extends Creature {
         }
         if (handler.getKeyManager().right) {
             xMove = +speed;
-        }
-
-        if (handler.getKeyManager().space){
-            System.out.println(handler.getMouseManager().getMouseX() / SCALE_FACTOR);
-            System.out.println(handler.getMouseManager().getMouseY() / SCALE_FACTOR);
-            //Needs mouse math
-            int mouseX = (handler.getMouseManager().getMouseX()) - (int) ((x - handler.getGameCamera().getxOffset()));
-            int mouseY = (handler.getMouseManager().getMouseY()) - (int) ((y - handler.getGameCamera().getyOffset()));
-
-            handler.getEntityManager().addEntity(new Bullet(handler, (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), Assets.bullet, new Vector2D(mouseX, mouseY, 10), 4));
         }
     }
 
