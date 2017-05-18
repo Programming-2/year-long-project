@@ -25,8 +25,6 @@ public abstract class Projectile extends Entity{
 
     public abstract void render(Graphics g);
 
-    public abstract void onCollision();
-
     public BufferedImage getImage(){
         return image;
     }

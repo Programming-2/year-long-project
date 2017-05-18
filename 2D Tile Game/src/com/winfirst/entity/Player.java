@@ -70,10 +70,10 @@ public class Player extends Creature {
         g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
         g.drawString(this.getX() + " " + this.getY(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()));
 
-//        		g.setColor(Color.red);
-//        		g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()),
-//        				(int) (y + bounds.y - handler.getGameCamera().getyOffset()),
-//        				bounds.width, bounds.height);
+        		g.setColor(Color.red);
+        		g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()),
+        				(int) (y + bounds.y - handler.getGameCamera().getyOffset()),
+        				bounds.width, bounds.height);
     }
 
     //Look at error
