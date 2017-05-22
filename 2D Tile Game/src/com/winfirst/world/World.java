@@ -42,7 +42,7 @@ public class World {
         npc.setTrack(true);
 
         for (int i = 0; i < 5; i++) {
-            entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 64, ThreadLocalRandom.current().nextInt(1, 22) * 64));
+            entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 45) * 64, ThreadLocalRandom.current().nextInt(1, 32) * 64));
         }
 
         itemManager.addItem(new NetCannon(handler, Assets.netCannon, 15));

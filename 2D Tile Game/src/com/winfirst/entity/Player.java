@@ -15,9 +15,14 @@ public class Player extends Creature {
     //Animations
     private Animation animDown, animLeft, animRight, animUp, animStop;
 
+    private int actualX, actualY;
+
     //Need to give player an inventory
     public Player(Handler handler, float x, float y) {
         super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
+
+        actualX = (int) x;
+        actualY = (int) y;
 
         bounds.x = 7;
         bounds.y = 65;
@@ -63,6 +68,9 @@ public class Player extends Creature {
         if (handler.getKeyManager().right) {
             xMove = +speed;
         }
+
+        actualX += xMove;
+        actualY += yMove;
     }
 
     @Override
@@ -91,4 +99,11 @@ public class Player extends Creature {
         }
     }
 
+    public int getActualX(){
+        return actualX;
+    }
+
+    public int getActualY(){
+        return actualY;
+    }
 }
