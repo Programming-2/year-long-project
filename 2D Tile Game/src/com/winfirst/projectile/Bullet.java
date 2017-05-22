@@ -19,9 +19,6 @@ public class Bullet extends Projectile{
     @Override
     public void tick() {
         move();
-//        super.setX((float) (((super.getX() + super.getVector().getXVol()))));
-//        super.setY((float) (((super.getY() + super.getVector().getYVol()))));
-        //System.out.println("X: " + super.getX() + " " + "Y: " + super.getY());
     }
 
     public void move() {
@@ -78,11 +75,6 @@ public class Bullet extends Projectile{
     protected boolean collisionWithTile(int x, int y) {
         return handler.getWorld().getTile(x, y).isSolid();
     }
-//        if (checkEntityCollision(super.getVector().getXVol(), super.getVector().getYVol())) {
-//            super.getHandler().getEntityManager().removeEntity(this);
-//        } else if(handler.getWorld().getTile((int) (super.getX() + bounds.x + bounds.width) / Tile.TILEWIDTH, (int) (super.getY() + bounds.y) / Tile.TILEHEIGHT).isSolid()) {
-//            super.getHandler().getEntityManager().removeEntity(this);
-//        }
 
     @Override
     public boolean checkEntityCollision(float xOffset, float yOffset) {
