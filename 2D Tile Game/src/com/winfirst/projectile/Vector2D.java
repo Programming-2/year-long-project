@@ -13,6 +13,11 @@ public class Vector2D {
         yVol = (float)((speed) * Math.sin(angle));
     }
 
+    public void tick(){
+        x += xVol;
+        y += yVol;
+    }
+
     public float getX() {
         return x;
     }
