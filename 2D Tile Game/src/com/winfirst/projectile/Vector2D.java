@@ -4,13 +4,14 @@ public class Vector2D {
 
     private float x, y, speed, angle, xVol, yVol;
 
-    public Vector2D(float x, float y, float speed) {
+    public Vector2D(float x, float y, float xDir, float yDir, float speed) {
         this.x = x;
         this.y = y;
         this.speed = speed;
-        this.angle = (float)(Math.atan2(y, x));
+        this.angle = (float)(Math.atan2(yDir, xDir));
         xVol = (float)((speed) * Math.cos(angle));
         yVol = (float)((speed) * Math.sin(angle));
+        System.out.println("x " + xVol + " y " + yVol);
     }
 
     public void tick(){
