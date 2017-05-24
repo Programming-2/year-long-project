@@ -32,8 +32,10 @@ public class EntityManager {
              i++) {
             Entity e = entities.get(i);
             e.tick();
+            System.out.println("x " + e.getX() + " y " + e.getY() + " class " + e.getClass().toGenericString());
         }
         entities.sort(renderSorter);
+        System.out.println(entities.size());
     }
 
     public void render(Graphics g) {
