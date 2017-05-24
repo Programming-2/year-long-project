@@ -21,6 +21,10 @@ public class Bullet extends Projectile{
         super.getVector().tick();
         super.setX(super.getVector().getX());
         super.setY(super.getVector().getY());
+
+        if(x < 0 || y < 0 || x > handler.getHeight() || y > handler.getWidth()){
+            handler.getEntityManager().removeEntity(this);
+        }
     }
 
     @Override

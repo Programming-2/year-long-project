@@ -11,7 +11,6 @@ public class Vector2D {
         this.angle = (float)(Math.atan2(yDir, xDir));
         xVol = (float)((speed) * Math.cos(angle));
         yVol = (float)((speed) * Math.sin(angle));
-        System.out.println("x " + xVol + " y " + yVol);
     }
 
     public void tick(){
