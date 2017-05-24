@@ -22,7 +22,7 @@ public class Bullet extends Projectile{
         super.setX(super.getVector().getX());
         super.setY(super.getVector().getY());
 
-        if(x < 0 || y < 0 || x > handler.getHeight() || y > handler.getWidth()){
+        if(x < 0 || y < 0 || x > 45 * 64 || y > 32 * 64){
             handler.getEntityManager().removeEntity(this);
         }
     }
