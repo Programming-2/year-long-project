@@ -22,6 +22,7 @@ public abstract class Creature extends Entity {
         yMove = 0;
     }
 
+    //Moves the creature if there is no collision
     public void move() {
         if (!checkEntityCollision(xMove, 0f)) {
             moveX();
@@ -31,6 +32,7 @@ public abstract class Creature extends Entity {
         }
     }
 
+    //Method for moving in the x direction
     public void moveX() {
         if (xMove > 0) {//Moving right
             int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
@@ -52,6 +54,7 @@ public abstract class Creature extends Entity {
         }
     }
 
+    //Method for moving in the y direction
     public void moveY() {
         if (yMove < 0) {//Up
             int ty = (int) (y + yMove + bounds.y) / Tile.TILEHEIGHT;
@@ -73,14 +76,17 @@ public abstract class Creature extends Entity {
         }
     }
 
+    //Checks for collision with a solid tile
     protected boolean collisionWithTile(int x, int y) {
         return handler.getWorld().getTile(x, y).isSolid();
     }
 
+    //Returns the tile the creature is touching
     protected Tile getTouchingTile(int x, int y) {
         return handler.getWorld().getTile(x, y);
     }
 
+    //Determines if the player is touching a tile
     public boolean isTouchingTile(Player p, Tile t, int x, int y) {
         if (p.getTouchingTile(x, y) == t) {
             return true;

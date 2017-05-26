@@ -17,10 +17,9 @@ public class NetCannon extends Weapon{
     @Override
     public void tick() {
         if (super.getHandler().getKeyManager().space){
-            int mouseX = (int) (super.getHandler().getMouseManager().getMouseX() - super.getHandler().getGameCamera().getyOffset());
-            int mouseY = (int) (super.getHandler().getMouseManager().getMouseY() - super.getHandler().getGameCamera().getyOffset());
-
-            super.getHandler().getEntityManager().addEntity(new Bullet(super.getHandler(), (int) (super.getX()), (int) (super.getY()), Assets.bullet, new Vector2D(this.getX(), this.getY(), mouseX, mouseY, 10), 4));
+            int mouseX = (super.getHandler().getMouseManager().getMouseX()) - (int) ((super.getX() - super.getHandler().getGameCamera().getxOffset()));
+            int mouseY = (super.getHandler().getMouseManager().getMouseY()) - (int) ((super.getY() - super.getHandler().getGameCamera().getyOffset()));
+            super.getHandler().getEntityManager().addEntity(new Bullet(super.getHandler(), (int) (super.getX() - super.getHandler().getGameCamera().getxOffset()), (int) (super.getY() - super.getHandler().getGameCamera().getyOffset()), Assets.bullet, new Vector2D(this.getX(), this.getY(), mouseX, mouseY, 10, this.getHandler()), 4));
         }
 
         super.setX((super.getHandler().getEntityManager().getPlayer().getX()) + 10);
