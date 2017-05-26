@@ -1,5 +1,6 @@
 package com.winfirst.entity;
 
+import com.winfirst.projectile.Projectile;
 import com.winfirst.utils.Handler;
 
 import java.awt.*;
@@ -32,7 +33,7 @@ public abstract class Entity {
     public boolean checkEntityCollision(float xOffset, float yOffset) {
         //Loops through all entities in the world
         for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
-            if (e.equals(this)) {
+            if (e.equals(this) || e instanceof Projectile) {
                 continue;
             }
             //Returns true if two bounds intersect
