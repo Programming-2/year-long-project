@@ -25,6 +25,9 @@ public class Bullet extends Projectile{
         if(x < 0 || y < 0 || x > 45 * 64 || y > 32 * 64){
             handler.getEntityManager().removeEntity(this);
         }
+        if (checkEntityCollision(handler.getGameCamera().getxOffset(), handler.getGameCamera().getyOffset()) || handler.getWorld().getTile((int) super.getX(), (int) super.getY()).isSolid()) {
+            this.getHandler().getEntityManager().removeEntity(this);
+        }
     }
 
     @Override
