@@ -48,54 +48,75 @@ public class Game implements Runnable {
     }
 
     private void init() {
+        //Display Stuff
         display = new Display(title, width, height);
         display.getFrame().addKeyListener(keyManager);
         display.getFrame().addMouseListener(mouseManager);
         display.getFrame().addMouseMotionListener(mouseManager);
         display.getCanvas().addMouseListener(mouseManager);
         display.getCanvas().addMouseMotionListener(mouseManager);
+
+        //Assets Init
         Assets.init();
 
+        //Handler init (stores variables related to the game
         handler = new Handler(this);
+
+        //Makes game camera
         gameCamera = new GameCamera(handler, 0, 0);
 
+        //Init States
         gameState = new GameState(handler);
         menuState = new MainMenu(handler);
+
+        //Sets current state to the Game State
         State.setState(gameState);
     }
 
 
     public void tick() {
+        //Ticks key manager
         keyManager.tick();
 
+        //Ticks current state
         if (State.getState() != null) {
             State.getState().tick();
         }
     }
 
     public void render() {
+        //Sets buffer strategy
         bs = display.getCanvas().getBufferStrategy();
 
+        //Creates buffer strategy if bs is null
         if (bs == null) {
             display.getCanvas().createBufferStrategy(3);
             return;
         }
 
+        //Gets instance of graphics object
         g = bs.getDrawGraphics();
 
+        //Clears the screen
         g.clearRect(0, 0, width, height);
 
+        //Renders current state
         if (State.getState() != null) {
             State.getState().render(g);
         }
 
+        //Shows buffer strategy
         bs.show();
+
+        //Disposes graphics
         g.dispose();
     }
 
     public void run() {
+        //Inits the game
         init();
 
+        //Vars to set fps
         int fps = 60;
         double timePerTick = 1000000000 / fps;
         double delta = 0;
@@ -104,8 +125,10 @@ public class Game implements Runnable {
         long timer = 0;
         int ticks = 0;
 
+        //Writes to logger
         Logger.getInstance().write("Run started");
 
+        //Game loop
         while (running) {
             now = System.nanoTime();
             delta += (now - lastTime) / timePerTick;
@@ -131,26 +154,32 @@ public class Game implements Runnable {
         stop();
     }
 
+    //Returns instance of key manager
     public KeyManager getKeyManager() {
         return keyManager;
     }
 
+    //Returns instance of mouse manager
     public MouseManager getMouseManager() {
         return mouseManager;
     }
 
+    //Returns instance of game camera
     public GameCamera getGameCamera() {
         return gameCamera;
     }
 
+    //Returns window width
     public int getWidth() {
         return width;
     }
 
+    //Returns window height
     public int getHeight() {
         return height;
     }
 
+    //Function that starts the game
     public synchronized void start() {
         Logger.getInstance().write("Game Started");
         if (running) {
@@ -161,6 +190,7 @@ public class Game implements Runnable {
         thread.start();
     }
 
+    //Function that stops game
     public synchronized void stop() {
         Logger.getInstance().write("Game Stopped");
         if (!running) {
