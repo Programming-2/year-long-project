@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 
 public class Assets {
 
-    public static final int playerWidth = 13, playerHeight = 36;
+    public static final int playerWidth = 15, playerHeight = 36;
     private static final int width = 32, height = 32;
     public static BufferedImage tree, dirt, grass, mainMenu, rock, stoneBrick;
     public static BufferedImage[] playerDown;
@@ -24,25 +24,25 @@ public class Assets {
         SpriteSheet MainMenu = new SpriteSheet(ImageLoader.loadImage("/textures/MainMenu.png"));
         SpriteSheet character = new SpriteSheet(ImageLoader.loadImage("/textures/Char.png"));
         SpriteSheet item = new SpriteSheet(ImageLoader.loadImage("/textures/items.png"));
-
+//Player Down Animation
         playerDown = new BufferedImage[4];
         playerDown[0] = character.crop(0, 0, playerWidth, playerHeight);
         playerDown[1] = character.crop(0, playerHeight, playerWidth, playerHeight);
         playerDown[2] = character.crop(0, 2 * playerHeight, playerWidth, playerHeight);
         playerDown[3] = character.crop(0, playerHeight, playerWidth, playerHeight);
-
+//Player Up Animation
         playerUp = new BufferedImage[4];
         playerUp[0] = character.crop(playerWidth, 0, playerWidth, playerHeight);
         playerUp[1] = character.crop(playerWidth, playerHeight, playerWidth, playerHeight);
         playerUp[2] = character.crop(playerWidth, 2 * playerHeight, playerWidth, playerHeight);
         playerUp[3] = character.crop(playerWidth, playerHeight, playerWidth, playerHeight);
-
+//Player Right Animation
         playerRight = new BufferedImage[4];
         playerRight[0] = character.crop(2 * playerWidth, 0, playerWidth, playerHeight);
         playerRight[1] = character.crop(2 * playerWidth, playerHeight, playerWidth, playerHeight);
         playerRight[2] = character.crop(2 * playerWidth, 2 * playerHeight, playerWidth, playerHeight);
         playerRight[3] = character.crop(2 * playerWidth, playerHeight, playerWidth, playerHeight);
-
+//Player Left Animation
         playerLeft = new BufferedImage[4];
         playerLeft[0] = character.crop(3 * playerWidth, 0, playerWidth, playerHeight);
         playerLeft[1] = character.crop(3 * playerWidth, playerHeight, playerWidth, playerHeight);
