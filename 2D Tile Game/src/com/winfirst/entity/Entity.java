@@ -18,18 +18,24 @@ public abstract class Entity {
         this.width = width;
         this.height = height;
 
+        //Creates collision bounds
         bounds = new Rectangle(0, 0, width, height);
     }
 
+    //Abstract tick
     public abstract void tick();
 
+    //Abstract render
     public abstract void render(Graphics g);
 
+    //Checks for entity collision
     public boolean checkEntityCollision(float xOffset, float yOffset) {
+        //Loops through all entities in the world
         for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
             if (e.equals(this)) {
                 continue;
             }
+            //Returns true if two bounds intersect
             if (e.getCollisionBounds(0, 0).intersects(getCollisionBounds(xOffset, yOffset))) {
                 return true;
             }
@@ -38,6 +44,7 @@ public abstract class Entity {
         return false;
     }
 
+    //Returns collision bounds
     public Rectangle getCollisionBounds(float xOffset, float yOffset) {
         return new Rectangle((int) (x + bounds.x + xOffset), (int) (y + bounds.y + yOffset), bounds.width, bounds.height);
     }
