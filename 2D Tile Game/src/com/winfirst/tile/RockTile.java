@@ -6,6 +6,7 @@ public class RockTile extends Tile {
         super(Assets.rock, id);
     }
 
+    //Tile is solid
     @Override
     public boolean isSolid() {
         return true;
