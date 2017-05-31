@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage;
 public class NetCannon extends Weapon{
 
     private int time = 0;
-    private static final int RELOAD_TIME = 10;
+    private static final int RELOAD_TIME = 12;
 
     public NetCannon (Handler handler, BufferedImage icon, int dmg){
         super(handler, icon, 10, 10, dmg);
