@@ -1,10 +1,5 @@
 package com.winfirst.events;
 
-import java.awt.*;
-
-/**
- * Created by jmisb19164 on 6/2/2017.
- */
 public class CollisionEvent{
 
     private Object creator, hit;
