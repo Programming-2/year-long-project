@@ -32,7 +32,7 @@ public class Assets {
     public static void init() {
         //Sprite sheets
         SpriteSheet ground = new SpriteSheet(ImageLoader.loadImage("/textures/ground.png"));
-        SpriteSheet MainMenu = new SpriteSheet(ImageLoader.loadImage("/textures/MainMenu.png"));
+        SpriteSheet MainMenu = new SpriteSheet(ImageLoader.loadImage("/textures/titlescreen.png"));
         SpriteSheet character = new SpriteSheet(ImageLoader.loadImage("/textures/Char.png"));
         SpriteSheet item = new SpriteSheet(ImageLoader.loadImage("/textures/items.png"));
 
