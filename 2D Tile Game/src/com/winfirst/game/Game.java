@@ -39,12 +39,19 @@ public class Game implements Runnable {
     //Handler
     private Handler handler;
 
+    //World paths
+    private int currentLevel = 0;
+    private final int LEVELS = 3;
+    private String[] worldPaths = new String[LEVELS];
+
     public Game(String title, int width, int height) {
         this.width = width;
         this.height = height;
         this.title = title;
         keyManager = new KeyManager();
         mouseManager = new MouseManager();
+        worldPaths[0] = "res/worlds/world1.lvl";
+        worldPaths[1] = "res/worlds/world2.lvl";
     }
 
     private void init() {
@@ -66,7 +73,7 @@ public class Game implements Runnable {
         gameCamera = new GameCamera(handler, 0, 0);
 
         //Init States
-        gameState = new GameState(handler);
+        gameState = new GameState(handler, worldPaths[0]);
         menuState = new MainMenu(handler);
 
         //Sets current state to the Game State
@@ -82,6 +89,11 @@ public class Game implements Runnable {
         if (State.getState() != null) {
             State.getState().tick();
         }
+    }
+
+    public void advanceLevel() {
+        currentLevel++;
+        GameState gameState = new GameState (handler, worldPaths[currentLevel]);
     }
 
     public void render() {

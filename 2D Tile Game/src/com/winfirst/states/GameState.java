@@ -9,10 +9,9 @@ public class GameState extends State {
 
     private World world;
 
-
-    public GameState(Handler handler) {
+    public GameState(Handler handler, String path) {
         super(handler);
-        world = new World(handler, "res/worlds/world1.lvl");
+        world = new World(handler, path);
         handler.setWorld(world);
     }
 
