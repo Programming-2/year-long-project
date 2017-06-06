@@ -5,6 +5,7 @@ import com.winfirst.graphics.GameCamera;
 import com.winfirst.input.KeyManager;
 import com.winfirst.input.MouseManager;
 import com.winfirst.logging.Logger;
+import com.winfirst.states.ControlState;
 import com.winfirst.states.GameState;
 import com.winfirst.states.MainMenu;
 import com.winfirst.states.State;
@@ -28,6 +29,7 @@ public class Game implements Runnable {
     //States
     public State gameState;
     public State menuState;
+    public State controlState;
 
     //Input
     private KeyManager keyManager;
@@ -75,6 +77,7 @@ public class Game implements Runnable {
         //Init States
         gameState = new GameState(handler, worldPaths[0]);
         menuState = new MainMenu(handler);
+        controlState = new ControlState(handler);
 
         //Sets current state to the Game State
         State.setState(menuState);
