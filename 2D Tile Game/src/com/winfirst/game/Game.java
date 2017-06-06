@@ -43,7 +43,7 @@ public class Game implements Runnable {
 
     //World paths
     private int currentLevel = 0;
-    private final int LEVELS = 3;
+    private final int LEVELS = 2;
     private String[] worldPaths = new String[LEVELS];
 
     public Game(String title, int width, int height) {
@@ -95,11 +95,13 @@ public class Game implements Runnable {
     }
 
     public void advanceLevel() {
-        if(currentLevel < worldPaths.length) {
+        if(currentLevel < LEVELS) {
             currentLevel++;
             gameCamera = new GameCamera(handler, 0, 0);
             GameState gameState = new GameState (handler, worldPaths[currentLevel]);
             State.setState(gameState);
+        } else {
+
         }
     }
 
