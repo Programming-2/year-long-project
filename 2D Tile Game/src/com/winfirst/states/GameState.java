@@ -13,6 +13,7 @@ public class GameState extends State {
         super(handler);
         world = new World(handler, path);
         handler.setWorld(world);
+        world.makeNPCs();
     }
 
     @Override

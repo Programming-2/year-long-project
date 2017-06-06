@@ -84,6 +84,17 @@ public class World {
         itemManager.render(g);
     }
 
+    public void makeNPCs() {
+        for(int i = 0; i < 10; i++) {
+            npc = new NPC(handler, ThreadLocalRandom.current().nextInt(1, this.getWidth()) * 64, ThreadLocalRandom.current().nextInt(1, this.getHeight()) * 64, p);
+            while(this.getTile((int) npc.getX(), (int) npc.getY()).isSolid() || npc.checkEntityCollision(0,0)) {
+                npc = new NPC(handler, ThreadLocalRandom.current().nextInt(1, this.getWidth()) * 64, ThreadLocalRandom.current().nextInt(1, this.getHeight()) * 64, p);
+            }
+            entityManager.addEntity(npc);
+            npc.setTrack(true);
+        }
+    }
+
     public Tile getTile(int x, int y) {
         if (x < 0 || y < 0 || x >= width || y >= height) {
             return Tile.grassTile;
