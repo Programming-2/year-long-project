@@ -70,7 +70,7 @@ public class Game implements Runnable {
         menuState = new MainMenu(handler);
 
         //Sets current state to the Game State
-        State.setState(gameState);
+        State.setState(menuState);
     }
 
 
