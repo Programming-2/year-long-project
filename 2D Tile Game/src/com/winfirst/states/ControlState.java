@@ -13,7 +13,11 @@ public class ControlState extends State{
 
     @Override
     public void tick() {
-
+        float x = handler.getMouseManager().getMouseX();
+        float y = handler.getMouseManager().getMouseY();
+        if(((x >= 800 && x <= 1103) && (y >= 500 && y <= 670)) && handler.getMouseManager().isLeftPressed()) {
+            State.setState(handler.getGame().menuState);
+        }
     }
 
     @Override
