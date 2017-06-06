@@ -50,6 +50,14 @@ public class EntityManager {
         entities.remove(e);
     }
 
+    public boolean isFinished() {
+        for(Entity e : this.getEntities()) {
+            if(e instanceof NPC && ((NPC)e).isTracking()) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     //Getters and Setters
     public Handler getHandler() {

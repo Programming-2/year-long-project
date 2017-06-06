@@ -1,6 +1,8 @@
 package com.winfirst.projectile;
 
 import com.winfirst.entity.Entity;
+import com.winfirst.entity.Player;
+import com.winfirst.entity.NPC;
 import com.winfirst.tile.Tile;
 import com.winfirst.utils.Handler;
 
@@ -31,7 +33,11 @@ public class Bullet extends Projectile{
     }
 
     public void collisionCheck() {
-        if (checkEntityCollision(handler.getGameCamera().getxOffset() + 10, handler.getGameCamera().getyOffset() + 10)) {
+        Entity e = testEntityCollision(handler.getGameCamera().getxOffset() + 10, handler.getGameCamera().getyOffset() + 10);
+        if (e instanceof NPC) {
+            ((NPC) e).setTrack(false);
+            this.getHandler().getEntityManager().removeEntity(this);
+        } else if(e != null) {
             this.getHandler().getEntityManager().removeEntity(this);
         }
         if (getVector().getXVol() > 0) {//Moving right
@@ -65,6 +71,21 @@ public class Bullet extends Projectile{
 
     public void onCollision() {
 
+    }
+
+    public Entity testEntityCollision(float xOffset, float yOffset) {
+        //Loops through all entities in the world
+        for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
+            if (e.equals(this) || e instanceof Projectile || e instanceof Player) {
+                continue;
+            }
+            //Returns true if two bounds intersect
+            if (e.getCollisionBounds(0, 0).intersects(getCollisionBounds(xOffset, yOffset))) {
+                return e;
+            }
+        }
+
+        return null;
     }
 
     @Override

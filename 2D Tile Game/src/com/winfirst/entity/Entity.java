@@ -35,8 +35,6 @@ public abstract class Entity {
         for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
             if (e.equals(this) || e instanceof Projectile) {
                 continue;
-            } else if(this instanceof Projectile && e instanceof Player) {
-                continue;
             }
             //Returns true if two bounds intersect
             if (e.getCollisionBounds(0, 0).intersects(getCollisionBounds(xOffset, yOffset))) {
