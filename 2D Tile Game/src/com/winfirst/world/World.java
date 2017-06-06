@@ -37,11 +37,6 @@ public class World {
         entityManager = new EntityManager(handler, p);
         itemManager = new ItemManager(handler);
         //entityManager.addEntity(new Tree(handler, 200, 200));
-        for(int i = 0; i < 10; i++) {
-            npc = new NPC(handler, ThreadLocalRandom.current().nextInt(1, 45) * 64, ThreadLocalRandom.current().nextInt(1, 32) * 64, p);
-            entityManager.addEntity(npc);
-            npc.setTrack(true);
-        }
 
         for (int i = 0; i < 5; i++) {
             entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 45) * 64, ThreadLocalRandom.current().nextInt(1, 32) * 64));

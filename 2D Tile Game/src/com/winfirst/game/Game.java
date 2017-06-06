@@ -198,6 +198,9 @@ public class Game implements Runnable {
         return height;
     }
 
+    //Returns current level
+    public int getCurrentLevel() { return currentLevel; }
+
     //Function that starts the game
     public synchronized void start() {
         Logger.getInstance().write("Game Started");
