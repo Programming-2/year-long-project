@@ -95,7 +95,7 @@ public class Game implements Runnable {
     }
 
     public void advanceLevel() {
-        if(currentLevel < LEVELS) {
+        if(currentLevel < LEVELS - 1) {
             currentLevel++;
             gameCamera = new GameCamera(handler, 0, 0);
             GameState gameState = new GameState (handler, worldPaths[currentLevel]);
