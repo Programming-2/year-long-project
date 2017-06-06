@@ -92,8 +92,12 @@ public class Game implements Runnable {
     }
 
     public void advanceLevel() {
-        currentLevel++;
-        GameState gameState = new GameState (handler, worldPaths[currentLevel]);
+        if(currentLevel < worldPaths.length) {
+            currentLevel++;
+            gameCamera = new GameCamera(handler, 0, 0);
+            GameState gameState = new GameState (handler, worldPaths[currentLevel]);
+            State.setState(gameState);
+        }
     }
 
     public void render() {
