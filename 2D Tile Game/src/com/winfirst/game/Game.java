@@ -5,10 +5,7 @@ import com.winfirst.graphics.GameCamera;
 import com.winfirst.input.KeyManager;
 import com.winfirst.input.MouseManager;
 import com.winfirst.logging.Logger;
-import com.winfirst.states.ControlState;
-import com.winfirst.states.GameState;
-import com.winfirst.states.MainMenu;
-import com.winfirst.states.State;
+import com.winfirst.states.*;
 import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
 
@@ -30,6 +27,7 @@ public class Game implements Runnable {
     public State gameState;
     public State menuState;
     public State controlState;
+    public State winState;
 
     //Input
     private KeyManager keyManager;
@@ -78,6 +76,7 @@ public class Game implements Runnable {
         gameState = new GameState(handler, worldPaths[0]);
         menuState = new MainMenu(handler);
         controlState = new ControlState(handler);
+        winState = new WinState(handler);
 
         //Sets current state to the Game State
         State.setState(menuState);
@@ -95,13 +94,13 @@ public class Game implements Runnable {
     }
 
     public void advanceLevel() {
-        if(currentLevel < LEVELS) {
+        if(currentLevel < LEVELS - 1) {
             currentLevel++;
             gameCamera = new GameCamera(handler, 0, 0);
             GameState gameState = new GameState (handler, worldPaths[currentLevel]);
             State.setState(gameState);
         } else {
-
+            State.setState(handler.getGame().winState);
         }
     }
 

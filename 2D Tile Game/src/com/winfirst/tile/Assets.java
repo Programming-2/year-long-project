@@ -15,7 +15,7 @@ public class Assets {
     private static final int width = 32, height = 32;
 
     //Var to store images
-    public static BufferedImage tree, dirt, grass, mainMenu, rock, stoneBrick, control;
+    public static BufferedImage tree, dirt, grass, mainMenu, rock, stoneBrick, control, victory;
 
     //player animations
     public static BufferedImage[] playerDown;
@@ -36,6 +36,7 @@ public class Assets {
         SpriteSheet character = new SpriteSheet(ImageLoader.loadImage("/textures/Char.png"));
         SpriteSheet item = new SpriteSheet(ImageLoader.loadImage("/textures/items.png"));
         SpriteSheet cont = new SpriteSheet(ImageLoader.loadImage("/textures/controls.png"));
+        SpriteSheet win = new SpriteSheet(ImageLoader.loadImage("/textures/win.png"));
 
 //Player Down Animation
         playerDown = new BufferedImage[4];
@@ -80,6 +81,7 @@ public class Assets {
         bullet = item.crop(width * 2, 0, width, height);
         netCannon = item.crop(width * 3, 0, width, height);
         control = cont.crop(0, 0, 1280, 720);
+        victory = win.crop(0,0, 1280, 720);
     }
 
 }
