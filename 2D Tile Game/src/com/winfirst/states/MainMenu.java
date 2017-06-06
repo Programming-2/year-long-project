@@ -16,7 +16,9 @@ public class MainMenu extends State {
         System.out.println(handler.getMouseManager().getMouseX() + " " + handler.getMouseManager().getMouseY());
         float x = handler.getMouseManager().getMouseX();
         float y = handler.getMouseManager().getMouseY();
-        if(x>=870 && x<=1080 &&)
+        if(x>=870 && x<=1080 && y>=340 && y<=940 && handler.getMouseManager().isLeftPressed()) {
+            State.setState(handler.getGame().gameState);
+        }
     }
 
     @Override
