@@ -77,12 +77,12 @@ public class World {
             }
         }
 
-        //Entities
+    //Entities
         entityManager.render(g);
 
-        //Items
+    //Items
         itemManager.render(g);
-    }
+}
 
     public void makeNPCs() {
         for(int i = 0; i < 10; i++) {

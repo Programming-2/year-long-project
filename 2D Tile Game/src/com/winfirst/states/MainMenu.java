@@ -13,7 +13,6 @@ public class MainMenu extends State {
 
     @Override
     public void tick() {
-        System.out.println(handler.getMouseManager().getMouseX() + " " + handler.getMouseManager().getMouseY());
         float x = handler.getMouseManager().getMouseX();
         float y = handler.getMouseManager().getMouseY();
         if(((x >= 870 && x <= 1080) && (y >= 340 && y <= 382)) && handler.getMouseManager().isLeftPressed()) {
