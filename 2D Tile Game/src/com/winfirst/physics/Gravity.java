@@ -2,9 +2,9 @@ package com.winfirst.physics;
 
 public class Gravity{
 
-    private double a;
+    private Vector2D a;
 
-    public Gravity(double a){
+    public Gravity(Vector2D a){
         this.a = a;
     }
 
