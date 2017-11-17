@@ -1,7 +1,7 @@
 package com.winfirst.item;
 
 import com.winfirst.projectile.Bullet;
-import com.winfirst.projectile.Vector2D;
+import com.winfirst.physics.Vector2D;
 import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
 

@@ -1,11 +1,8 @@
 package com.winfirst.entity;
 
 import com.winfirst.graphics.Animation;
-import com.winfirst.projectile.Bullet;
-import com.winfirst.projectile.Vector2D;
 import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
-import com.winfirst.utils.Utils;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

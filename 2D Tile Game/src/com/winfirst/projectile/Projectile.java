@@ -1,6 +1,7 @@
 package com.winfirst.projectile;
 
 import com.winfirst.entity.Entity;
+import com.winfirst.physics.Vector2D;
 import com.winfirst.utils.Handler;
 
 import java.awt.*;

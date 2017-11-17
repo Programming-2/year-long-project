@@ -3,6 +3,7 @@ package com.winfirst.projectile;
 import com.winfirst.entity.Entity;
 import com.winfirst.entity.Player;
 import com.winfirst.entity.NPC;
+import com.winfirst.physics.Vector2D;
 import com.winfirst.tile.Tile;
 import com.winfirst.utils.Handler;
 
