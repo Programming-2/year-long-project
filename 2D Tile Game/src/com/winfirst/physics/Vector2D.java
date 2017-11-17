@@ -12,6 +12,7 @@ public class Vector2D {
         this.y = y;
         this.speed = speed;
         this.angle = (float)(Math.atan2(yDir, xDir));
+        System.out.println(Math.toDegrees(angle));
         xVol = (float)((speed) * Math.cos(angle));
         yVol = (float)((speed) * Math.sin(angle));
         this.handler = handler;
