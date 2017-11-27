@@ -4,13 +4,13 @@ package com.winfirst.physics;
 
 public class Gravity{
 
-    private Vector2D vectA;
+    private VelocityVector vectA;
 
     public Gravity(double a, Handler h){
-        vectA = new Vector2D(0, 0, 0, 1, (float) a, h);
+        vectA = new VelocityVector(0, 0, 0, 1, (float) a, h);
     }
 
-    public Vector2D getVector(){
+    public VelocityVector getVector(){
         return vectA;
     }
 

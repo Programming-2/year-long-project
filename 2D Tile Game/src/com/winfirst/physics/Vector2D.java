@@ -4,35 +4,16 @@ import com.winfirst.utils.Handler;
 
 public class Vector2D {
 
-    private float x, y, speed, angle, xVol, yVol;
+    private float magnitude, angle, xVol, yVol;
     private Handler handler;
 
-    public Vector2D(float x, float y, float xDir, float yDir, float speed, Handler handler) {
-        this.x = x;
-        this.y = y;
-        this.speed = speed;
+    public Vector2D(float xDir, float yDir, float magnitude, Handler handler) {
+        this.magnitude = magnitude;
         this.angle = (float)(Math.atan2(yDir, xDir));
         System.out.println(Math.toDegrees(angle));
-        xVol = (float)((speed) * Math.cos(angle));
-        yVol = (float)((speed) * Math.sin(angle));
+        xVol = (float)((magnitude) * Math.cos(angle));
+        yVol = (float)((magnitude) * Math.sin(angle));
         this.handler = handler;
-    }
-
-    public void tick(){
-        x += xVol;
-        y += yVol;
-    }
-
-    public float getX() {
-        return x - handler.getGameCamera().getxOffset();
-    }
-
-    public void setX(float x) {
-        this.x = x;
-    }
-
-    public float getY() {
-        return y  - handler.getGameCamera().getyOffset();
     }
 
     public float getXVol(){
@@ -43,18 +24,17 @@ public class Vector2D {
         return yVol;
     }
 
-    public void setY(float y) {
-        this.y = y;
+    public float getMagnitude() {
+        return magnitude;
     }
 
-    public float getSpeed() {
-        return speed;
+    public void setMagnitude(float speed) {
+        this.magnitude = magnitude;
     }
 
-    public void setSpeed(float speed) {
-        this.speed = speed;
-    }
+    public Handler getHandler() { return handler; }
 
     public float getAngle(){return angle;}
+
 
 }

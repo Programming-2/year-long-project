@@ -1,7 +1,7 @@
 package com.winfirst.item;
 
 import com.winfirst.projectile.Bullet;
-import com.winfirst.physics.Vector2D;
+import com.winfirst.physics.VelocityVector;
 import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
 
@@ -22,9 +22,9 @@ public class NetCannon extends Weapon{
         if (super.getHandler().getKeyManager().space && time == 0){
             int mouseX = (super.getHandler().getMouseManager().getMouseX()) - (int) ((super.getX() - super.getHandler().getGameCamera().getxOffset()));
             int mouseY = (super.getHandler().getMouseManager().getMouseY()) - (int) ((super.getY() - super.getHandler().getGameCamera().getyOffset()));
-            //super.getHandler().getEntityManager().addEntity(new Bullet(super.getHandler(), (int) (super.getX() - super.getHandler().getGameCamera().getxOffset()), (int) (super.getY() - super.getHandler().getGameCamera().getyOffset()), Assets.bullet, new Vector2D(this.getX(), this.getY(), mouseX, mouseY, 10, this.getHandler()), 4));
-            super.getHandler().getEntityManager().addEntity(new Bullet(super.getHandler(), (int) (super.getX() - super.getHandler().getGameCamera().getxOffset()), (int) (super.getY() - super.getHandler().getGameCamera().getyOffset()), Assets.bullet, new Vector2D(this.getX(), this.getY(), mouseX - 40, mouseY - 40, 10, this.getHandler()), 4));
-            //super.getHandler().getEntityManager().addEntity(new Bullet(super.getHandler(), (int) (super.getX() - super.getHandler().getGameCamera().getxOffset()), (int) (super.getY() - super.getHandler().getGameCamera().getyOffset()), Assets.bullet, new Vector2D(this.getX(), this.getY(), mouseX + 40, mouseY + 40, 10, this.getHandler()), 4));
+            //super.getHandler().getEntityManager().addEntity(new Bullet(super.getHandler(), (int) (super.getX() - super.getHandler().getGameCamera().getxOffset()), (int) (super.getY() - super.getHandler().getGameCamera().getyOffset()), Assets.bullet, new VelocityVector(this.getX(), this.getY(), mouseX, mouseY, 10, this.getHandler()), 4));
+            super.getHandler().getEntityManager().addEntity(new Bullet(super.getHandler(), (int) (super.getX() - super.getHandler().getGameCamera().getxOffset()), (int) (super.getY() - super.getHandler().getGameCamera().getyOffset()), Assets.bullet, new VelocityVector(this.getX(), this.getY(), mouseX - 40, mouseY - 40, 10, this.getHandler()), 4));
+            //super.getHandler().getEntityManager().addEntity(new Bullet(super.getHandler(), (int) (super.getX() - super.getHandler().getGameCamera().getxOffset()), (int) (super.getY() - super.getHandler().getGameCamera().getyOffset()), Assets.bullet, new VelocityVector(this.getX(), this.getY(), mouseX + 40, mouseY + 40, 10, this.getHandler()), 4));
             time = RELOAD_TIME;
         }
 

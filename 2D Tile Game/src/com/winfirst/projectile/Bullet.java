@@ -3,7 +3,7 @@ package com.winfirst.projectile;
 import com.winfirst.entity.Entity;
 import com.winfirst.entity.Player;
 import com.winfirst.entity.NPC;
-import com.winfirst.physics.Vector2D;
+import com.winfirst.physics.VelocityVector;
 import com.winfirst.tile.Tile;
 import com.winfirst.utils.Handler;
 
@@ -14,7 +14,7 @@ public class Bullet extends Projectile{
 
     private int dmg;
 
-    public Bullet(Handler h, int startX, int startY, BufferedImage image, Vector2D vect, int dmg){
+    public Bullet(Handler h, int startX, int startY, BufferedImage image, VelocityVector vect, int dmg){
         super(h, startX, startY, image, vect, 8, 8);
         this.dmg = dmg;
     }
